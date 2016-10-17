@@ -20,7 +20,7 @@ ortogonálních polí. Nalezněte a zvolte vhodné ortogonální pole.
 ### Instrukce se třemi parametry
 Pro instrukci se třemi parametry jsme se rozhodli vybrat ortogonální pole L9 ze stránek univerzity v Yorku, konkrétně pak ze stránky [Orthogonal Arrays][yrk].
 
-##### Tabulka L9
+<h5> Tabulka L9</h5>
 <table style="margin:0px auto;width:70%">
 	<thead style="">
 		<th style="text-align: center">&nbsp;</th>
@@ -94,7 +94,7 @@ Pro instrukci se třemi parametry jsme se rozhodli vybrat ortogonální pole L9 
 	</td>
 </table>
 
-##### Slovník parametrů
+<h5> Slovník parametrů</h5>
 <table style="margin:0px auto;width:60%">
 	<thead style="">
 		<th style="text-align: center">Kód hodnoty</th>
@@ -114,7 +114,7 @@ Pro instrukci se třemi parametry jsme se rozhodli vybrat ortogonální pole L9 
 	</td>
 </table>
 
-##### Tabulka testovacích případů
+<h5> Tabulka testovacích případů</h5>
 Sloupec 4 z tabulky L9 jsme vynechali
 <table style="margin:0px auto;width:60%">
 	<thead style="">
@@ -179,14 +179,16 @@ Sloupec 4 z tabulky L9 jsme vynechali
 	</td>
 </table>
 
-##### Slovní popis testovacího případu 6
+
+<h5>Slovní popis testovacího případu 6</h5>
+
 Proveď instrukci s adresním módem BasePlusIndex pro první parametr, RegisterRelative pro druhý a Indirect pro třetí parametr.
 
-### Instrukce s pěti parametry
+<h5> Instrukce s pěti parametry</h5>
 Pro instrukci s pěti parametry jsme se rozhodli vybrat ortogonální pole L16b ze stránek univerzity v Yorku, konkrétně pak ze stránky [Orthogonal Arrays][yrk].
 <div style="height: 200px"></div>
 
-##### Tabulka L16b
+<h5> Tabulka L16b</h5>
 <table style="margin:0px auto;width:70%">
 	<thead style="">
 		<th style="text-align: center">&nbsp;</th>
@@ -327,7 +329,7 @@ Pro instrukci s pěti parametry jsme se rozhodli vybrat ortogonální pole L16b 
 </table>
 
 
-##### Slovník parametrů
+<h5> Slovník parametrů</h5>
 <table style="margin:0px auto;width:60%">
 	<thead style="">
 		<th style="text-align: center">Kód hodnoty</th>
@@ -353,7 +355,7 @@ Pro instrukci s pěti parametry jsme se rozhodli vybrat ortogonální pole L16b 
 <div style="height: 200px"></div>
 
 
-##### Tabulka testovacích případů
+<h5> Tabulka testovacích případů</h5></h5>
 <table style="margin:0px auto;width:70%;font-size:80%">
 	<thead style="">
 		<th style="text-align: center">Test case</th>
@@ -493,7 +495,7 @@ Pro instrukci s pěti parametry jsme se rozhodli vybrat ortogonální pole L16b 
 	</td>
 </table>
 
-##### Slovní popis testovacího případu 16
+<h5> Slovní popis testovacího případu 16</h5>
 Proveď instrukci s adresním módem Indirect pro první, druhý a třetí parametr, RegisterRelative pro čtvrtý parametr a BasePlusIndex pro pátý parametr.
 
 Optimalizace s latinskými čtverci
