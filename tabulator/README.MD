@@ -1,11 +1,17 @@
 TABULATOR
 =========
 html tabulky pro markdown
- ### Build
+
+Build
+-----
  `mvn package`
- ### Run
+ 
+Run
+---
  `java -jar tabulator-1.0.jar`
  
  taha classpath ze slozky `./lib/`. Vygeneruje se ve slozce `target/`
- ### More
+ 
+More
+------
  `java -jar tabulator-1.0.jar --help`
