@@ -513,5 +513,253 @@ Ověřte, zda lze provést s úspěchem vybrané akce editoru. Předpokládáme 
 Vytvořte testovací plán zajišťující otestování všech binárních vztahů optimalizovaný pomocí
 latinských čtverců. Zvolte a vypočítejte vhodnou sadu latinských čtverců.
 
+<h5>Identifikace parametrů a významných hodnot</h5>
+parametry = pozice v sekvenci
+významné hodnoty = možné akce na jednotlivých pozicích (podle zadání)
+<h5>Volba čtverce</h5>
+<span style="color:red">TODO lépe popsat</span>
+Potřebujeme kódovat minimálně 6 parametrů => 2 indexy + minimálně 4 čtverce => minimálně čtverec 5x5
+
+<h5>Latinské čtverce</h5>
+<table style="margin:0px auto;width:60%">
+	<tr style="">
+		<td style="text-align: center;">0</td>
+		<td style="text-align: center;">1</td>
+		<td style="text-align: center;">2</td>
+		<td style="text-align: center;">3</td>
+		<td style="text-align: center;">4</td>
+	</td>
+	<tr style="">
+		<td style="text-align: center;">1</td>
+		<td style="text-align: center;">2</td>
+		<td style="text-align: center;">3</td>
+		<td style="text-align: center;">4</td>
+		<td style="text-align: center;">0</td>
+	</td>
+	<tr style="">
+		<td style="text-align: center;">2</td>
+		<td style="text-align: center;">3</td>
+		<td style="text-align: center;">4</td>
+		<td style="text-align: center;">0</td>
+		<td style="text-align: center;">1</td>
+	</td>
+	<tr style="">
+		<td style="text-align: center;">3</td>
+		<td style="text-align: center;">4</td>
+		<td style="text-align: center;">0</td>
+		<td style="text-align: center;">1</td>
+		<td style="text-align: center;">2</td>
+	</td>
+	<tr style="">
+		<td style="text-align: center;">4</td>
+		<td style="text-align: center;">0</td>
+		<td style="text-align: center;">1</td>
+		<td style="text-align: center;">2</td>
+		<td style="text-align: center;">3</td>
+	</td>
+</table>
+<div style="height: 1em"></div>
+<table style="margin:0px auto;width:60%">
+	<tr style="">
+		<td style="text-align: center;">0</td>
+		<td style="text-align: center;">1</td>
+		<td style="text-align: center;">2</td>
+		<td style="text-align: center;">3</td>
+		<td style="text-align: center;">4</td>
+	</td>
+	<tr style="">
+		<td style="text-align: center;">2</td>
+		<td style="text-align: center;">3</td>
+		<td style="text-align: center;">4</td>
+		<td style="text-align: center;">0</td>
+		<td style="text-align: center;">1</td>
+	</td>
+	<tr style="">
+		<td style="text-align: center;">4</td>
+		<td style="text-align: center;">0</td>
+		<td style="text-align: center;">1</td>
+		<td style="text-align: center;">2</td>
+		<td style="text-align: center;">3</td>
+	</td>
+	<tr style="">
+		<td style="text-align: center;">1</td>
+		<td style="text-align: center;">2</td>
+		<td style="text-align: center;">3</td>
+		<td style="text-align: center;">4</td>
+		<td style="text-align: center;">0</td>
+	</td>
+	<tr style="">
+		<td style="text-align: center;">3</td>
+		<td style="text-align: center;">4</td>
+		<td style="text-align: center;">0</td>
+		<td style="text-align: center;">1</td>
+		<td style="text-align: center;">2</td>
+	</td>
+</table>
+<div style="height: 1em"></div>
+<table style="margin:0px auto;width:60%">
+	<tr style="">
+		<td style="text-align: center;">0</td>
+		<td style="text-align: center;">1</td>
+		<td style="text-align: center;">2</td>
+		<td style="text-align: center;">3</td>
+		<td style="text-align: center;">4</td>
+	</td>
+	<tr style="">
+		<td style="text-align: center;">3</td>
+		<td style="text-align: center;">4</td>
+		<td style="text-align: center;">0</td>
+		<td style="text-align: center;">1</td>
+		<td style="text-align: center;">2</td>
+	</td>
+	<tr style="">
+		<td style="text-align: center;">1</td>
+		<td style="text-align: center;">2</td>
+		<td style="text-align: center;">3</td>
+		<td style="text-align: center;">4</td>
+		<td style="text-align: center;">0</td>
+	</td>
+	<tr style="">
+		<td style="text-align: center;">4</td>
+		<td style="text-align: center;">0</td>
+		<td style="text-align: center;">1</td>
+		<td style="text-align: center;">2</td>
+		<td style="text-align: center;">3</td>
+	</td>
+	<tr style="">
+		<td style="text-align: center;">2</td>
+		<td style="text-align: center;">3</td>
+		<td style="text-align: center;">4</td>
+		<td style="text-align: center;">0</td>
+		<td style="text-align: center;">1</td>
+	</td>
+</table>
+<div style="height: 1em"></div>
+<table style="margin:0px auto;width:60%">
+	<tr style="">
+		<td style="text-align: center;">0</td>
+		<td style="text-align: center;">1</td>
+		<td style="text-align: center;">2</td>
+		<td style="text-align: center;">3</td>
+		<td style="text-align: center;">4</td>
+	</td>
+	<tr style="">
+		<td style="text-align: center;">4</td>
+		<td style="text-align: center;">0</td>
+		<td style="text-align: center;">1</td>
+		<td style="text-align: center;">2</td>
+		<td style="text-align: center;">3</td>
+	</td>
+	<tr style="">
+		<td style="text-align: center;">3</td>
+		<td style="text-align: center;">4</td>
+		<td style="text-align: center;">0</td>
+		<td style="text-align: center;">1</td>
+		<td style="text-align: center;">2</td>
+	</td>
+	<tr style="">
+		<td style="text-align: center;">2</td>
+		<td style="text-align: center;">3</td>
+		<td style="text-align: center;">4</td>
+		<td style="text-align: center;">0</td>
+		<td style="text-align: center;">1</td>
+	</td>
+	<tr style="">
+		<td style="text-align: center;">1</td>
+		<td style="text-align: center;">2</td>
+		<td style="text-align: center;">3</td>
+		<td style="text-align: center;">4</td>
+		<td style="text-align: center;">0</td>
+	</td>
+</table>
+<div style="height: 1em"></div>
+
+<h5 style="color:red">TODO spravny nadpis a sloupce tabulky</h5>
+<table style="margin:0px auto;font-size:80%">
+	<thead style="">
+		<th style="text-align: center">&nbsp;</th>
+		<th style="text-align: center">i</th>
+		<th style="text-align: center">j</th>
+		<th style="text-align: center">C1</th>
+		<th style="text-align: center">C2</th>
+		<th style="text-align: center">C3</th>
+		<th style="text-align: center">C4</th>
+	</thead>
+	<tr style="">
+		<th style="text-align: center">0</th>
+		<td style="text-align: left;">New</td>
+		<td style="text-align: left;">SelectLine</td>
+		<td style="text-align: left;">Bold</td>
+		<td style="text-align: left;">Delete</td>
+		<td style="text-align: left;">JumpStart</td>
+		<td style="text-align: left;">Save</td>
+	</td>
+	<tr style="">
+		<th style="text-align: center">1</th>
+		<td style="text-align: left;">Open</td>
+		<td style="text-align: left;">SelectAll</td>
+		<td style="text-align: left;">Normal</td>
+		<td style="text-align: left;">Insert</td>
+		<td style="text-align: left;">JumpEnd</td>
+		<td style="text-align: left;">SaveAs</td>
+	</td>
+	<tr style="">
+		<th style="text-align: center">2</th>
+		<td style="text-align: left;">New</td>
+		<td style="text-align: left;">SelectChar</td>
+		<td style="text-align: left;">Cursive</td>
+		<td style="text-align: left;">Delete</td>
+		<td style="text-align: left;">PageUp</td>
+		<td style="text-align: left;">Cancel</td>
+	</td>
+	<tr style="">
+		<th style="text-align: center">3</th>
+		<td style="text-align: left;">Open</td>
+		<td style="text-align: left;">SelectLine</td>
+		<td style="text-align: left;">Bold</td>
+		<td style="text-align: left;">Insert</td>
+		<td style="text-align: left;">JumpStart</td>
+		<td style="text-align: left;">Save</td>
+	</td>
+	<tr style="">
+		<th style="text-align: center">4</th>
+		<td style="text-align: left;">New</td>
+		<td style="text-align: left;">SelectChar</td>
+		<td style="text-align: left;">Normal</td>
+		<td style="text-align: left;">Delete</td>
+		<td style="text-align: left;">JumpEnd</td>
+		<td style="text-align: left;">SaveAs</td>
+	</td>
+</table>
+
+<h5>Testovací případy</h5>
+1. New -> SelectLine -> Bold -> Delete -> JumpStart -> Save
+1. New -> SelectAll -> Normal -> Insert -> JumpEnd -> SaveAs
+1. New -> SelectChar -> Cursive -> Delete -> PageUp -> Cancel
+1. New -> SelectLine -> Bold -> Insert -> JumpStart -> Save
+1. New -> SelectAll -> Normal -> Delete -> JumpEnd -> SaveAs
+1. Open -> SelectLine -> Normal -> Delete -> JumpStart -> SaveAs
+1. Open -> SelectAll -> Cursive -> Insert -> JumpEnd -> Save
+1. Open -> SelectChar -> Bold -> Delete -> JumpStart -> SaveAs
+1. Open -> SelectLine -> Normal -> Delete -> JumpEnd -> Cancel
+1. Open -> SelectAll -> Bold -> Insert -> PageUp -> Save
+1. New -> SelectLine -> Cursive -> Delete -> JumpEnd -> Save
+1. New -> SelectAll -> Bold -> Delete -> PageUp -> SaveAs
+1. New -> SelectChar -> Normal -> Insert -> JumpStart -> Save
+1. New -> SelectLine -> Bold -> Delete -> JumpEnd -> SaveAs
+1. New -> SelectAll -> Normal -> Insert -> JumpStart -> Cancel
+1. Open -> SelectLine -> Bold -> Insert -> JumpEnd -> Cancel
+1. Open -> SelectAll -> Normal -> Delete -> JumpStart -> Save
+1. Open -> SelectChar -> Bold -> Insert -> JumpEnd -> SaveAs
+1. Open -> SelectLine -> Normal -> Delete -> PageUp -> Save
+1. Open -> SelectAll -> Cursive -> Delete -> JumpStart -> SaveAs
+1. New -> SelectLine -> Normal -> Insert -> PageUp -> SaveAs
+1. New -> SelectAll -> Bold -> Delete -> JumpStart -> Cancel
+1. New -> SelectChar -> Normal -> Delete -> JumpEnd -> Save
+1. New -> SelectLine -> Cursive -> Insert -> JumpStart -> SaveAs
+1. New -> SelectAll -> Bold -> Delete -> JumpEnd -> Save
+
+<h5>Slovní popis testovacího případu 1</h5>
+Proveď v editoru akce v posloupnosti New, SelectLine, Bold, Delete, JumpStart a Save.
 
 [yrk]: http://www.york.ac.uk/depts/maths/tables/orthogonal.htm "Orthogonal Arrays (Taguchi Designs)"
