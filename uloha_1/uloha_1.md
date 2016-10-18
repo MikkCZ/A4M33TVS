@@ -20,7 +20,7 @@ ortogonálních polí. Nalezněte a zvolte vhodné ortogonální pole.
 ### Instrukce se třemi parametry
 Pro instrukci se třemi parametry jsme se rozhodli vybrat ortogonální pole L9 ze stránek univerzity v Yorku, konkrétně pak ze stránky [Orthogonal Arrays][yrk].
 
-<h5> Tabulka L9</h5>
+##### Tabulka L9
 <table style="margin:0px auto;width:70%">
 	<thead style="">
 		<th style="text-align: center">&nbsp;</th>
@@ -94,7 +94,7 @@ Pro instrukci se třemi parametry jsme se rozhodli vybrat ortogonální pole L9 
 	</td>
 </table>
 
-<h5> Slovník parametrů</h5>
+##### Slovník parametrů
 <table style="margin:0px auto;width:60%">
 	<thead style="">
 		<th style="text-align: center">Kód hodnoty</th>
@@ -114,7 +114,7 @@ Pro instrukci se třemi parametry jsme se rozhodli vybrat ortogonální pole L9 
 	</td>
 </table>
 
-<h5> Tabulka testovacích případů</h5>
+##### Tabulka testovacích případů
 Sloupec 4 z tabulky L9 jsme vynechali
 <table style="margin:0px auto;width:60%">
 	<thead style="">
@@ -180,15 +180,15 @@ Sloupec 4 z tabulky L9 jsme vynechali
 </table>
 
 
-<h5>Slovní popis testovacího případu 6</h5>
+##### Slovní popis testovacího případu 6
 
 Proveď instrukci s adresním módem BasePlusIndex pro první parametr, RegisterRelative pro druhý a Indirect pro třetí parametr.
 
-<h5> Instrukce s pěti parametry</h5>
+##### Instrukce s pěti parametry
 Pro instrukci s pěti parametry jsme se rozhodli vybrat ortogonální pole L16b ze stránek univerzity v Yorku, konkrétně pak ze stránky [Orthogonal Arrays][yrk].
 <div style="height: 200px"></div>
 
-<h5> Tabulka L16b</h5>
+##### Tabulka L16b
 <table style="margin:0px auto;width:70%">
 	<thead style="">
 		<th style="text-align: center">&nbsp;</th>
@@ -329,7 +329,7 @@ Pro instrukci s pěti parametry jsme se rozhodli vybrat ortogonální pole L16b 
 </table>
 
 
-<h5> Slovník parametrů</h5>
+##### Slovník parametrů
 <table style="margin:0px auto;width:60%">
 	<thead style="">
 		<th style="text-align: center">Kód hodnoty</th>
@@ -355,7 +355,7 @@ Pro instrukci s pěti parametry jsme se rozhodli vybrat ortogonální pole L16b 
 <div style="height: 200px"></div>
 
 
-<h5> Tabulka testovacích případů</h5></h5>
+##### Tabulka testovacích případů
 <table style="margin:0px auto;width:70%;font-size:80%">
 	<thead style="">
 		<th style="text-align: center">Test case</th>
@@ -495,7 +495,7 @@ Pro instrukci s pěti parametry jsme se rozhodli vybrat ortogonální pole L16b 
 	</td>
 </table>
 
-<h5> Slovní popis testovacího případu 16</h5>
+##### Slovní popis testovacího případu 16
 Proveď instrukci s adresním módem Indirect pro první, druhý a třetí parametr, RegisterRelative pro čtvrtý parametr a BasePlusIndex pro pátý parametr.
 
 Optimalizace s latinskými čtverci
@@ -513,14 +513,14 @@ Ověřte, zda lze provést s úspěchem vybrané akce editoru. Předpokládáme 
 Vytvořte testovací plán zajišťující otestování všech binárních vztahů optimalizovaný pomocí
 latinských čtverců. Zvolte a vypočítejte vhodnou sadu latinských čtverců.
 
-<h5>Identifikace parametrů a významných hodnot</h5>
+##### Identifikace parametrů a významných hodnot
 parametry = pozice v sekvenci
 významné hodnoty = možné akce na jednotlivých pozicích (podle zadání)
-<h5>Volba čtverce</h5>
+##### Volba čtverce
 <span style="color:red">TODO lépe popsat</span>
 Potřebujeme kódovat minimálně 6 parametrů => 2 indexy + minimálně 4 čtverce => minimálně čtverec 5x5
 
-<h5>Latinské čtverce</h5>
+##### Latinské čtverce
 <table style="margin:0px auto;width:60%">
 	<tr style="">
 		<td style="text-align: center;">0</td>
@@ -732,7 +732,7 @@ Potřebujeme kódovat minimálně 6 parametrů => 2 indexy + minimálně 4 čtve
 	</td>
 </table>
 
-<h5>Testovací případy</h5>
+##### Testovací případy
 1. New -> SelectLine -> Bold -> Delete -> JumpStart -> Save
 1. New -> SelectAll -> Normal -> Insert -> JumpEnd -> SaveAs
 1. New -> SelectChar -> Cursive -> Delete -> PageUp -> Cancel
@@ -759,7 +759,7 @@ Potřebujeme kódovat minimálně 6 parametrů => 2 indexy + minimálně 4 čtve
 1. New -> SelectLine -> Cursive -> Insert -> JumpStart -> SaveAs
 1. New -> SelectAll -> Bold -> Delete -> JumpEnd -> Save
 
-<h5>Slovní popis testovacího případu 1</h5>
+##### Slovní popis testovacího případu 1
 Proveď v editoru akce v posloupnosti New, SelectLine, Bold, Delete, JumpStart a Save.
 
 [yrk]: http://www.york.ac.uk/depts/maths/tables/orthogonal.htm "Orthogonal Arrays (Taguchi Designs)"
