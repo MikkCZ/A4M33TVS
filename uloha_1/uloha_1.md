@@ -17,6 +17,9 @@ Sestavte generické testy pro instrukce se 3 a 5 parametry.
 Vytvořte testovací plán zajišťující otestování všech binárních vztahů optimalizovaný pomocí
 ortogonálních polí. Nalezněte a zvolte vhodné ortogonální pole.
 
+### Identifikace faktorů a úrovní
+V této úloze jsou jednotlivými faktury parametry instrukce. Úrovněmi jsou pak adresní módy Indirect, BasePlusIndex a RegisterRelative.
+
 ### Instrukce se třemi parametry
 Pro instrukci se třemi parametry jsme se rozhodli vybrat ortogonální pole L9 ze stránek univerzity v Yorku, konkrétně pak ze stránky [Orthogonal Arrays][yrk]. L9 je pole pro až čtyři parametry se třemi úrovněmi.
 
@@ -510,8 +513,9 @@ Vytvořte testovací plán zajišťující otestování všech binárních vztah
 latinských čtverců. Zvolte a vypočítejte vhodnou sadu latinských čtverců.
 
 ##### Identifikace parametrů a významných hodnot
-parametry = pozice v sekvenci
+parametry = pozice v sekvenci akcí
 významné hodnoty = možné akce na jednotlivých pozicích (podle zadání)
+
 ##### Volba čtverce
 V úloze jsme potřebovali do čtverce zakódovat až tři významné hodnoty a zároveň šest parametrů. Podle "pravidla" n+1 jsme tak zvolili n=5 a použili čtyři čtverce 5x5 z [přednáškových slajdů][slides].
 
