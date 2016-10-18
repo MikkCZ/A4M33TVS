@@ -18,9 +18,9 @@ Vytvořte testovací plán zajišťující otestování všech binárních vztah
 ortogonálních polí. Nalezněte a zvolte vhodné ortogonální pole.
 
 ### Instrukce se třemi parametry
-Pro instrukci se třemi parametry jsme se rozhodli vybrat ortogonální pole L9 ze stránek univerzity v Yorku, konkrétně pak ze stránky [Orthogonal Arrays][yrk].
+Pro instrukci se třemi parametry jsme se rozhodli vybrat ortogonální pole L9 ze stránek univerzity v Yorku, konkrétně pak ze stránky [Orthogonal Arrays][yrk]. L9 je pole pro až čtyři parametry se třemi úrovněmi.
 
-##### Tabulka L9
+##### Ortogonální pole L9
 <table style="margin:0px auto;width:70%">
 	<thead style="">
 		<th style="text-align: center">&nbsp;</th>
@@ -115,7 +115,7 @@ Pro instrukci se třemi parametry jsme se rozhodli vybrat ortogonální pole L9 
 </table>
 
 ##### Tabulka testovacích případů
-Sloupec 4 z tabulky L9 jsme vynechali
+Sloupec 4 z ortogonálního pole L9 jsme vynechali
 <table style="margin:0px auto;width:60%">
 	<thead style="">
 		<th style="text-align: center">Test Case</th>
@@ -179,16 +179,14 @@ Sloupec 4 z tabulky L9 jsme vynechali
 	</td>
 </table>
 
-
 ##### Slovní popis testovacího případu 6
-
 Proveď instrukci s adresním módem BasePlusIndex pro první parametr, RegisterRelative pro druhý a Indirect pro třetí parametr.
 
-##### Instrukce s pěti parametry
-Pro instrukci s pěti parametry jsme se rozhodli vybrat ortogonální pole L16b ze stránek univerzity v Yorku, konkrétně pak ze stránky [Orthogonal Arrays][yrk].
+### Instrukce s pěti parametry
+Pro instrukci s pěti parametry jsme se rozhodli vybrat ortogonální pole L16b ze stránek univerzity v Yorku, konkrétně pak ze stránky [Orthogonal Arrays][yrk]. L16b je pole pro až pět parametrů se čtyřmi úrovněmi.
 <div style="height: 200px"></div>
 
-##### Tabulka L16b
+##### Ortogonální pole L16b
 <table style="margin:0px auto;width:70%">
 	<thead style="">
 		<th style="text-align: center">&nbsp;</th>
@@ -328,7 +326,6 @@ Pro instrukci s pěti parametry jsme se rozhodli vybrat ortogonální pole L16b 
 	</td>
 </table>
 
-
 ##### Slovník parametrů
 <table style="margin:0px auto;width:60%">
 	<thead style="">
@@ -353,7 +350,6 @@ Pro instrukci s pěti parametry jsme se rozhodli vybrat ortogonální pole L16b 
 	</td>
 </table>
 <div style="height: 200px"></div>
-
 
 ##### Tabulka testovacích případů
 <table style="margin:0px auto;width:70%;font-size:80%">
