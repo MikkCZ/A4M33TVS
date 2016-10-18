@@ -887,31 +887,31 @@ V úloze jsme potřebovali do čtverce zakódovat až tři významné hodnoty a 
 <div style="height: 1em"></div>
 
 ##### Testovací případy
-1. New -> SelectLine -> Bold -> Delete -> JumpStart -> Save
-1. New -> SelectAll -> Normal -> Insert -> JumpEnd -> SaveAs
-1. New -> SelectChar -> Cursive -> Delete -> PageUp -> Cancel
-1. New -> SelectLine -> Bold -> Insert -> JumpStart -> Save
-1. New -> SelectAll -> Normal -> Delete -> JumpEnd -> SaveAs
-1. Open -> SelectLine -> Normal -> Delete -> JumpStart -> SaveAs
-1. Open -> SelectAll -> Cursive -> Insert -> JumpEnd -> Save
-1. Open -> SelectChar -> Bold -> Delete -> JumpStart -> SaveAs
-1. Open -> SelectLine -> Normal -> Delete -> JumpEnd -> Cancel
-1. Open -> SelectAll -> Bold -> Insert -> PageUp -> Save
-1. New -> SelectLine -> Cursive -> Delete -> JumpEnd -> Save
-1. New -> SelectAll -> Bold -> Delete -> PageUp -> SaveAs
-1. New -> SelectChar -> Normal -> Insert -> JumpStart -> Save
-1. New -> SelectLine -> Bold -> Delete -> JumpEnd -> SaveAs
-1. New -> SelectAll -> Normal -> Insert -> JumpStart -> Cancel
-1. Open -> SelectLine -> Bold -> Insert -> JumpEnd -> Cancel
-1. Open -> SelectAll -> Normal -> Delete -> JumpStart -> Save
-1. Open -> SelectChar -> Bold -> Insert -> JumpEnd -> SaveAs
-1. Open -> SelectLine -> Normal -> Delete -> PageUp -> Save
-1. Open -> SelectAll -> Cursive -> Delete -> JumpStart -> SaveAs
-1. New -> SelectLine -> Normal -> Insert -> PageUp -> SaveAs
-1. New -> SelectAll -> Bold -> Delete -> JumpStart -> Cancel
-1. New -> SelectChar -> Normal -> Delete -> JumpEnd -> Save
-1. New -> SelectLine -> Cursive -> Insert -> JumpStart -> SaveAs
-1. New -> SelectAll -> Bold -> Delete -> JumpEnd -> Save
+1. *0, 0, 0, 0, 0, 0: New -> SelectLine -> Bold -> Delete -> JumpStart -> Save*
+1. *0, 1, 1, 1, 1, 1: New -> SelectAll -> Normal -> Insert -> JumpEnd -> SaveAs*
+1. *0, 2, 2, 2, 2, 2: New -> SelectChar -> Cursive -> Delete -> PageUp -> Cancel*
+1. *0, 3, 3, 3, 3, 3: New -> SelectLine -> Bold -> Insert -> JumpStart -> Save*
+1. *0, 4, 4, 4, 4, 4: New -> SelectAll -> Normal -> Delete -> JumpEnd -> SaveAs*
+1. *1, 0, 1, 2, 3, 4: Open -> SelectLine -> Normal -> Delete -> JumpStart -> SaveAs*
+1. *1, 1, 2, 3, 4, 0: Open -> SelectAll -> Cursive -> Insert -> JumpEnd -> Save*
+1. *1, 2, 3, 4, 0, 1: Open -> SelectChar -> Bold -> Delete -> JumpStart -> SaveAs*
+1. *1, 3, 4, 0, 1, 2: Open -> SelectLine -> Normal -> Delete -> JumpEnd -> Cancel*
+1. *1, 4, 0, 1, 2, 3: Open -> SelectAll -> Bold -> Insert -> PageUp -> Save*
+1. *2, 0, 2, 4, 1, 3: New -> SelectLine -> Cursive -> Delete -> JumpEnd -> Save*
+1. *2, 1, 3, 0, 2, 4: New -> SelectAll -> Bold -> Delete -> PageUp -> SaveAs*
+1. *2, 2, 4, 1, 3, 0: New -> SelectChar -> Normal -> Insert -> JumpStart -> Save*
+1. *2, 3, 0, 2, 4, 1: New -> SelectLine -> Bold -> Delete -> JumpEnd -> SaveAs*
+1. *2, 4, 1, 3, 0, 2: New -> SelectAll -> Normal -> Insert -> JumpStart -> Cancel*
+1. *3, 0, 3, 1, 4, 2: Open -> SelectLine -> Bold -> Insert -> JumpEnd -> Cancel*
+1. *3, 1, 4, 2, 0, 3: Open -> SelectAll -> Normal -> Delete -> JumpStart -> Save*
+1. *3, 2, 0, 3, 1, 4: Open -> SelectChar -> Bold -> Insert -> JumpEnd -> SaveAs*
+1. *3, 3, 1, 4, 2, 0: Open -> SelectLine -> Normal -> Delete -> PageUp -> Save*
+1. *3, 4, 2, 0, 3, 1: Open -> SelectAll -> Cursive -> Delete -> JumpStart -> SaveAs*
+1. *4, 0, 4, 3, 2, 1: New -> SelectLine -> Normal -> Insert -> PageUp -> SaveAs*
+1. *4, 1, 0, 4, 3, 2: New -> SelectAll -> Bold -> Delete -> JumpStart -> Cancel*
+1. *4, 2, 1, 0, 4, 3: New -> SelectChar -> Normal -> Delete -> JumpEnd -> Save*
+1. *4, 3, 2, 1, 0, 4: New -> SelectLine -> Cursive -> Insert -> JumpStart -> SaveAs*
+1. *4, 4, 3, 2, 1, 0: New -> SelectAll -> Bold -> Delete -> JumpEnd -> Save*
 
 ##### Slovní popis testovacího případu 1
 Proveď v editoru akce v posloupnosti New, SelectLine, Bold, Delete, JumpStart a Save.
