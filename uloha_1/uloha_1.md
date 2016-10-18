@@ -11,7 +11,7 @@ Skupina: **10**
 
 Optimalizace s ortogonálními poli
 ---------------------------------
-#### Úloha 10
+### Úloha 10
 Ověřte, zda kompilátor assembleru překládá správně adresní módy parametrů instrukcí. Adresní
 módy jsou následující:
 * Indirect
@@ -23,12 +23,11 @@ Sestavte generické testy pro instrukce se 3 a 5 parametry.
 Vytvořte testovací plán zajišťující otestování všech binárních vztahů optimalizovaný pomocí
 ortogonálních polí. Nalezněte a zvolte vhodné ortogonální pole.
 
-### Identifikace faktorů a úrovní
+#### Identifikace faktorů a úrovní
 V této úloze jsou jednotlivými faktury parametry instrukce. Úrovněmi jsou pak adresní módy Indirect, BasePlusIndex a RegisterRelative.
 
-### Instrukce se třemi parametry
+#### Instrukce se třemi parametry
 Pro instrukci se třemi parametry jsme se rozhodli vybrat ortogonální pole L9 ze stránek univerzity v Yorku, konkrétně pak ze stránky [Orthogonal Arrays][yrk]. L9 je pole pro až čtyři parametry se třemi úrovněmi.
-<div style="height: 230px"></div>
 
 ##### Ortogonální pole L9
 <table style="margin:0px auto;width:70%">
@@ -192,7 +191,9 @@ Sloupec 4 z ortogonálního pole L9 jsme vynechali
 ##### Slovní popis testovacího případu 6
 Proveď instrukci s adresním módem BasePlusIndex pro první parametr, RegisterRelative pro druhý a Indirect pro třetí parametr.
 
-### Instrukce s pěti parametry
+<div class="page-break" />
+
+#### Instrukce s pěti parametry
 Pro instrukci s pěti parametry jsme se rozhodli vybrat ortogonální pole L16b ze stránek univerzity v Yorku, konkrétně pak ze stránky [Orthogonal Arrays][yrk]. L16b je pole pro až pět parametrů se čtyřmi úrovněmi.
 
 
@@ -335,7 +336,6 @@ Pro instrukci s pěti parametry jsme se rozhodli vybrat ortogonální pole L16b 
 		<td style="text-align: center">2</td>
 	</td>
 </table>
-<div style="height: 230px"></div>
 
 
 <h5> Slovník parametrů</h5>
@@ -362,6 +362,7 @@ Pro instrukci s pěti parametry jsme se rozhodli vybrat ortogonální pole L16b 
 	</td>
 </table>
 
+<div class="page-break" />
 
 <h5>Tabulka testovacích případů</h5>
 <table style="margin:0px auto;width:70%;font-size:80%;margin-bottom:100px;">
@@ -507,6 +508,8 @@ Pro instrukci s pěti parametry jsme se rozhodli vybrat ortogonální pole L16b 
 Proveď instrukci s adresním módem Indirect pro první, druhý a třetí parametr, RegisterRelative pro čtvrtý parametr a BasePlusIndex pro pátý parametr.
 
 
+<div class="page-break" />
+
 Optimalizace s latinskými čtverci
 ---------------------------------
 #### Úloha 10
@@ -568,7 +571,8 @@ V úloze jsme potřebovali do čtverce zakódovat až tři významné hodnoty a 
 		<td style="text-align: center;">3</td>
 	</td>
 </table>
-<div style="height: 220px"></div>
+
+
 <h6>C2</h6>
 <table style="margin:0px auto;width:60%">
 	<tr style="">
@@ -607,6 +611,9 @@ V úloze jsme potřebovali do čtverce zakódovat až tři významné hodnoty a 
 		<td style="text-align: center;">2</td>
 	</td>
 </table>
+
+<div class="page-break" />
+
 <h6>C3</h6>
 <table style="margin:0px auto;width:60%">
 	<tr style="">
@@ -902,32 +909,96 @@ V úloze jsme potřebovali do čtverce zakódovat až tři významné hodnoty a 
 </table>
 <div style="height: 9em"></div>
 
+<div class="page-break" />
+
 ##### Testovací případy
-1. *0, 0, 0, 0, 0, 0: New -> SelectLine -> Bold -> Delete -> JumpStart -> Save*
-1. *0, 1, 1, 1, 1, 1: New -> SelectAll -> Normal -> Insert -> JumpEnd -> SaveAs*
-1. *0, 2, 2, 2, 2, 2: New -> SelectChar -> Cursive -> Delete -> PageUp -> Cancel*
-1. *0, 3, 3, 3, 3, 3: New -> SelectLine -> Bold -> Insert -> JumpStart -> Save*
-1. *0, 4, 4, 4, 4, 4: New -> SelectAll -> Normal -> Delete -> JumpEnd -> SaveAs*
-1. *1, 0, 1, 2, 3, 4: Open -> SelectLine -> Normal -> Delete -> JumpStart -> SaveAs*
-1. *1, 1, 2, 3, 4, 0: Open -> SelectAll -> Cursive -> Insert -> JumpEnd -> Save*
-1. *1, 2, 3, 4, 0, 1: Open -> SelectChar -> Bold -> Delete -> JumpStart -> SaveAs*
-1. *1, 3, 4, 0, 1, 2: Open -> SelectLine -> Normal -> Delete -> JumpEnd -> Cancel*
-1. *1, 4, 0, 1, 2, 3: Open -> SelectAll -> Bold -> Insert -> PageUp -> Save*
-1. *2, 0, 2, 4, 1, 3: New -> SelectLine -> Cursive -> Delete -> JumpEnd -> Save*
-1. *2, 1, 3, 0, 2, 4: New -> SelectAll -> Bold -> Delete -> PageUp -> SaveAs*
-1. *2, 2, 4, 1, 3, 0: New -> SelectChar -> Normal -> Insert -> JumpStart -> Save*
-1. *2, 3, 0, 2, 4, 1: New -> SelectLine -> Bold -> Delete -> JumpEnd -> SaveAs*
-1. *2, 4, 1, 3, 0, 2: New -> SelectAll -> Normal -> Insert -> JumpStart -> Cancel*
-1. *3, 0, 3, 1, 4, 2: Open -> SelectLine -> Bold -> Insert -> JumpEnd -> Cancel*
-1. *3, 1, 4, 2, 0, 3: Open -> SelectAll -> Normal -> Delete -> JumpStart -> Save*
-1. *3, 2, 0, 3, 1, 4: Open -> SelectChar -> Bold -> Insert -> JumpEnd -> SaveAs*
-1. *3, 3, 1, 4, 2, 0: Open -> SelectLine -> Normal -> Delete -> PageUp -> Save*
-1. *3, 4, 2, 0, 3, 1: Open -> SelectAll -> Cursive -> Delete -> JumpStart -> SaveAs*
-1. *4, 0, 4, 3, 2, 1: New -> SelectLine -> Normal -> Insert -> PageUp -> SaveAs*
-1. *4, 1, 0, 4, 3, 2: New -> SelectAll -> Bold -> Delete -> JumpStart -> Cancel*
-1. *4, 2, 1, 0, 4, 3: New -> SelectChar -> Normal -> Delete -> JumpEnd -> Save*
-1. *4, 3, 2, 1, 0, 4: New -> SelectLine -> Cursive -> Insert -> JumpStart -> SaveAs*
-1. *4, 4, 3, 2, 1, 0: New -> SelectAll -> Bold -> Delete -> JumpEnd -> Save*
+
+<table>
+	<thead>
+		<tr>
+			<th>Test case</th>
+			<th>Akce 1</th>
+			<th>Akce 2</th>
+			<th>Akce 3</th>
+			<th>Akce 4</th>
+			<th>Akce 5</th>
+			<th>Akce 6</th>
+		</tr>
+	<thead>
+	<tbody>
+		<tr><th>1</th><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		<tr><th>2</th><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+		<tr><th>3</th><td>0</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td></tr>
+		<tr><th>4</th><td>0</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td></tr>
+		<tr><th>5</th><td>0</td><td>4</td><td>4</td><td>4</td><td>4</td><td>4</td></tr>
+		<tr><th>6</th><td>1</td><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+		<tr><th>7</th><td>1</td><td>1</td><td>2</td><td>3</td><td>4</td><td>0</td></tr>
+		<tr><th>8</th><td>1</td><td>2</td><td>3</td><td>4</td><td>0</td><td>1</td></tr>
+		<tr><th>9</th><td>1</td><td>3</td><td>4</td><td>0</td><td>1</td><td>2</td></tr>
+		<tr><th>10</th><td>1</td><td>4</td><td>0</td><td>1</td><td>2</td><td>3</td></tr>
+		<tr><th>11</th><td>2</td><td>0</td><td>2</td><td>4</td><td>1</td><td>3</td></tr>
+		<tr><th>12</th><td>2</td><td>1</td><td>3</td><td>0</td><td>2</td><td>4</td></tr>
+		<tr><th>13</th><td>2</td><td>2</td><td>4</td><td>1</td><td>3</td><td>0</td></tr>
+		<tr><th>14</th><td>2</td><td>3</td><td>0</td><td>2</td><td>4</td><td>1</td></tr>
+		<tr><th>15</th><td>2</td><td>4</td><td>1</td><td>3</td><td>0</td><td>2</td></tr>
+		<tr><th>16</th><td>3</td><td>0</td><td>3</td><td>1</td><td>4</td><td>2</td></tr>
+		<tr><th>17</th><td>3</td><td>1</td><td>4</td><td>2</td><td>0</td><td>3</td></tr>
+		<tr><th>18</th><td>3</td><td>2</td><td>0</td><td>3</td><td>1</td><td>4</td></tr>
+		<tr><th>19</th><td>3</td><td>3</td><td>1</td><td>4</td><td>2</td><td>0</td></tr>
+		<tr><th>20</th><td>3</td><td>4</td><td>2</td><td>0</td><td>3</td><td>1</td></tr>
+		<tr><th>21</th><td>4</td><td>0</td><td>4</td><td>3</td><td>2</td><td>1</td></tr>
+		<tr><th>22</th><td>4</td><td>1</td><td>0</td><td>4</td><td>3</td><td>2</td></tr>
+		<tr><th>23</th><td>4</td><td>2</td><td>1</td><td>0</td><td>4</td><td>3</td></tr>
+		<tr><th>24</th><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td><td>4</td></tr>
+		<tr><th>25</th><td>4</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr>
+	</tbody>
+</table>
+
+<div class="page-break" />
+
+Po nahrazení číselných hodnot jejich textovou reprezentací z jednotlivých matic získáme:
+
+<table>
+	<thead>
+	<tr>
+		<th>Test case</th>
+		<th>Akce 1</th>
+		<th>Akce 2</th>
+		<th>Akce 3</th>
+		<th>Akce 4</th>
+		<th>Akce 5</th>
+		<th>Akce 6</th>
+	</tr>
+	</thead>
+	<tbody>
+		<tr><th>1</th><td>New</td><td>SelectLine</td><td>Bold</td><td>Delete</td><td>JumpStart</td><td>Save</td></tr>
+		<tr><th>2</th><td>New</td><td>SelectAll</td><td>Normal</td><td>Insert</td><td>JumpEnd</td><td>SaveAs</td></tr>
+		<tr><th>3</th><td>New</td><td>SelectChar</td><td>Cursive</td><td>Delete</td><td>PageUp</td><td>Cancel</td></tr>
+		<tr><th>4</th><td>New</td><td>SelectLine</td><td>Bold</td><td>Insert</td><td>JumpStart</td><td>Save</td></tr>
+		<tr><th>5</th><td>New</td><td>SelectAll</td><td>Normal</td><td>Delete</td><td>JumpEnd</td><td>SaveAs</td></tr>
+		<tr><th>6</th><td>Open</td><td>SelectLine</td><td>Normal</td><td>Delete</td><td>JumpStart</td><td>SaveAs</td></tr>
+		<tr><th>7</th><td>Open</td><td>SelectAll</td><td>Cursive</td><td>Insert</td><td>JumpEnd</td><td>Save</td></tr>
+		<tr><th>8</th><td>Open</td><td>SelectChar</td><td>Bold</td><td>Delete</td><td>JumpStart</td><td>SaveAs</td></tr>
+		<tr><th>9</th><td>Open</td><td>SelectLine</td><td>Normal</td><td>Delete</td><td>JumpEnd</td><td>Cancel</td></tr>
+		<tr><th>10</th><td>Open</td><td>SelectAll</td><td>Bold</td><td>Insert</td><td>PageUp</td><td>Save</td></tr>
+		<tr><th>11</th><td>New</td><td>SelectLine</td><td>Cursive</td><td>Delete</td><td>JumpEnd</td><td>Save</td></tr>
+		<tr><th>12</th><td>New</td><td>SelectAll</td><td>Bold</td><td>Delete</td><td>PageUp</td><td>SaveAs</td></tr>
+		<tr><th>13</th><td>New</td><td>SelectChar</td><td>Normal</td><td>Insert</td><td>JumpStart</td><td>Save</td></tr>
+		<tr><th>14</th><td>New</td><td>SelectLine</td><td>Bold</td><td>Delete</td><td>JumpEnd</td><td>SaveAs</td></tr>
+		<tr><th>15</th><td>New</td><td>SelectAll</td><td>Normal</td><td>Insert</td><td>JumpStart</td><td>Cancel</td></tr>
+		<tr><th>16</th><td>Open</td><td>SelectLine</td><td>Bold</td><td>Insert</td><td>JumpEnd</td><td>Cancel</td></tr>
+		<tr><th>17</th><td>Open</td><td>SelectAll</td><td>Normal</td><td>Delete</td><td>JumpStart</td><td>Save</td></tr>
+		<tr><th>18</th><td>Open</td><td>SelectChar</td><td>Bold</td><td>Insert</td><td>JumpEnd</td><td>SaveAs</td></tr>
+		<tr><th>19</th><td>Open</td><td>SelectLine</td><td>Normal</td><td>Delete</td><td>PageUp</td><td>Save</td></tr>
+		<tr><th>20</th><td>Open</td><td>SelectAll</td><td>Cursive</td><td>Delete</td><td>JumpStart</td><td>SaveAs</td></tr>
+		<tr><th>21</th><td>New</td><td>SelectLine</td><td>Normal</td><td>Insert</td><td>PageUp</td><td>SaveAs</td></tr>
+		<tr><th>22</th><td>New</td><td>SelectAll</td><td>Bold</td><td>Delete</td><td>JumpStart</td><td>Cancel</td></tr>
+		<tr><th>23</th><td>New</td><td>SelectChar</td><td>Normal</td><td>Delete</td><td>JumpEnd</td><td>Save</td></tr>
+		<tr><th>24</th><td>New</td><td>SelectLine</td><td>Cursive</td><td>Insert</td><td>JumpStart</td><td>SaveAs</td></tr>
+		<tr><th>25</th><td>New</td><td>SelectAll</td><td>Bold</td><td>Delete</td><td>JumpEnd</td><td>Save</td></tr>
+	</tbody>
+</table>
+
 
 ##### Slovní popis testovacího případu 1
 Proveď v editoru akce v posloupnosti New, SelectLine, Bold, Delete, JumpStart a Save.
