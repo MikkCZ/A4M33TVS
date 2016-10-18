@@ -1,3 +1,9 @@
+<style>
+h6 {
+		color: #777777;
+}
+</style>
+
 Optimalizační úlohy
 ===================
 Skupina: **10**  
@@ -22,6 +28,7 @@ V této úloze jsou jednotlivými faktury parametry instrukce. Úrovněmi jsou p
 
 ### Instrukce se třemi parametry
 Pro instrukci se třemi parametry jsme se rozhodli vybrat ortogonální pole L9 ze stránek univerzity v Yorku, konkrétně pak ze stránky [Orthogonal Arrays][yrk]. L9 je pole pro až čtyři parametry se třemi úrovněmi.
+<div style="height: 230px"></div>
 
 ##### Ortogonální pole L9
 <table style="margin:0px auto;width:70%">
@@ -187,7 +194,7 @@ Proveď instrukci s adresním módem BasePlusIndex pro první parametr, Register
 
 ### Instrukce s pěti parametry
 Pro instrukci s pěti parametry jsme se rozhodli vybrat ortogonální pole L16b ze stránek univerzity v Yorku, konkrétně pak ze stránky [Orthogonal Arrays][yrk]. L16b je pole pro až pět parametrů se čtyřmi úrovněmi.
-<div style="height: 200px"></div>
+
 
 ##### Ortogonální pole L16b
 <table style="margin:0px auto;width:70%">
@@ -328,8 +335,10 @@ Pro instrukci s pěti parametry jsme se rozhodli vybrat ortogonální pole L16b 
 		<td style="text-align: center">2</td>
 	</td>
 </table>
+<div style="height: 230px"></div>
 
-##### Slovník parametrů
+
+<h5> Slovník parametrů</h5>
 <table style="margin:0px auto;width:60%">
 	<thead style="">
 		<th style="text-align: center">Kód hodnoty</th>
@@ -352,10 +361,10 @@ Pro instrukci s pěti parametry jsme se rozhodli vybrat ortogonální pole L16b 
 		<td style="text-align: left">Indirect</td>
 	</td>
 </table>
-<div style="height: 200px"></div>
 
-##### Tabulka testovacích případů
-<table style="margin:0px auto;width:70%;font-size:80%">
+
+<h5>Tabulka testovacích případů</h5>
+<table style="margin:0px auto;width:70%;font-size:80%;margin-bottom:100px;">
 	<thead style="">
 		<th style="text-align: center">Test case</th>
 		<th style="text-align: center">Parametr 1</th>
@@ -497,6 +506,7 @@ Pro instrukci s pěti parametry jsme se rozhodli vybrat ortogonální pole L16b 
 ##### Slovní popis testovacího případu 16
 Proveď instrukci s adresním módem Indirect pro první, druhý a třetí parametr, RegisterRelative pro čtvrtý parametr a BasePlusIndex pro pátý parametr.
 
+
 Optimalizace s latinskými čtverci
 ---------------------------------
 #### Úloha 10
@@ -520,7 +530,7 @@ významné hodnoty = možné akce na jednotlivých pozicích (podle zadání)
 V úloze jsme potřebovali do čtverce zakódovat až tři významné hodnoty a zároveň šest parametrů. Podle "pravidla" n+1 jsme tak zvolili n=5 a použili čtyři čtverce 5x5 z [přednáškových slajdů][slides].
 
 ##### Latinské čtverce
-###### C1
+<h6>C1</h6>
 <table style="margin:0px auto;width:60%">
 	<tr style="">
 		<td style="text-align: center;">0</td>
@@ -558,7 +568,8 @@ V úloze jsme potřebovali do čtverce zakódovat až tři významné hodnoty a 
 		<td style="text-align: center;">3</td>
 	</td>
 </table>
-###### C2
+<div style="height: 220px"></div>
+<h6>C2</h6>
 <table style="margin:0px auto;width:60%">
 	<tr style="">
 		<td style="text-align: center;">0</td>
@@ -596,7 +607,7 @@ V úloze jsme potřebovali do čtverce zakódovat až tři významné hodnoty a 
 		<td style="text-align: center;">2</td>
 	</td>
 </table>
-###### C3
+<h6>C3</h6>
 <table style="margin:0px auto;width:60%">
 	<tr style="">
 		<td style="text-align: center;">0</td>
@@ -634,7 +645,7 @@ V úloze jsme potřebovali do čtverce zakódovat až tři významné hodnoty a 
 		<td style="text-align: center;">1</td>
 	</td>
 </table>
-###### C4
+<h6>C4</h6>
 <table style="margin:0px auto;width:60%">
 	<tr style="">
 		<td style="text-align: center;">0</td>
@@ -674,7 +685,7 @@ V úloze jsme potřebovali do čtverce zakódovat až tři významné hodnoty a 
 </table>
 <div style="height: 1em"></div>
 
-##### Tabulka pro interpretaci číselných hodnot z latinských čtverců
+<h5> Tabulka pro interpretaci číselných hodnot z latinských čtverců</h5>
 * i, j = iterační proménné a tedy indexy pozic ve čtvercích odpovídají první a druhé akci
 * C1 - C4 = pole jednotlivých čtverců odpovídají třetí až šesté akci
 
@@ -734,9 +745,10 @@ V úloze jsme potřebovali do čtverce zakódovat až tři významné hodnoty a 
 		<td style="text-align: left;">SaveAs</td>
 	</td>
 </table>
+<div style="height: 30px"></div>
 
 ##### Latinské čtverce s významnými hodnotami
-###### C1 (třetí akce)
+<h6>C1 (třetí akce)</h6>
 <table style="margin:0px auto;width:60%">
 	<tr style="">
 		<td style="text-align: center;">Bold</td>
@@ -774,7 +786,7 @@ V úloze jsme potřebovali do čtverce zakódovat až tři významné hodnoty a 
 		<td style="text-align: center;">Bold</td>
 	</td>
 </table>
-###### C2 (čtvrtá akce)
+<h6>C2 (čtvrtá akce)</h6>
 <table style="margin:0px auto;width:60%">
 	<tr style="">
 		<td style="text-align: center;">Delete</td>
@@ -812,7 +824,7 @@ V úloze jsme potřebovali do čtverce zakódovat až tři významné hodnoty a 
 		<td style="text-align: center;">Delete</td>
 	</td>
 </table>
-###### C3 (pátá akce)
+<h6>C3 (pátá akce)</h6>
 <table style="margin:0px auto;width:60%">
 	<tr style="">
 		<td style="text-align: center;">JumpStart</td>
@@ -850,7 +862,7 @@ V úloze jsme potřebovali do čtverce zakódovat až tři významné hodnoty a 
 		<td style="text-align: center;">JumpEnd</td>
 	</td>
 </table>
-###### C4 (šestá akce)
+<h6>C4 (šestá akce)</h6>
 <table style="margin:0px auto;width:60%">
 	<tr style="">
 		<td style="text-align: center;">Save</td>
@@ -888,7 +900,7 @@ V úloze jsme potřebovali do čtverce zakódovat až tři významné hodnoty a 
 		<td style="text-align: center;">Save</td>
 	</td>
 </table>
-<div style="height: 1em"></div>
+<div style="height: 9em"></div>
 
 ##### Testovací případy
 1. *0, 0, 0, 0, 0, 0: New -> SelectLine -> Bold -> Delete -> JumpStart -> Save*
