@@ -673,10 +673,13 @@ V úloze jsme potřebovali do čtverce zakódovat až tři významné hodnoty a 
 </table>
 <div style="height: 1em"></div>
 
-<h5 style="color:red">TODO spravny nadpis a sloupce tabulky</h5>
+##### Tabulka pro interpretaci číselných hodnot z latinských čtverců
+* i, j = iterační proménné a tedy indexy pozic ve čtvercích odpovídají první a druhé akci
+* C1 - C4 = pole jednotlivých čtverců odpovídají třetí až šesté akci
+
 <table style="margin:0px auto;font-size:80%">
 	<thead style="">
-		<th style="text-align: center">&nbsp;</th>
+		<th style="text-align: center">hodnoty</th>
 		<th style="text-align: center">i</th>
 		<th style="text-align: center">j</th>
 		<th style="text-align: center">C1</th>
