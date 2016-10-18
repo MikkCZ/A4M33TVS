@@ -517,8 +517,7 @@ latinských čtverců. Zvolte a vypočítejte vhodnou sadu latinských čtverců
 parametry = pozice v sekvenci
 významné hodnoty = možné akce na jednotlivých pozicích (podle zadání)
 ##### Volba čtverce
-<span style="color:red">TODO lépe popsat</span>
-Potřebujeme kódovat minimálně 6 parametrů => 2 indexy + minimálně 4 čtverce => minimálně čtverec 5x5
+V úloze jsme potřebovali do čtverce zakódovat až tři významné hodnoty a zároveň šest parametrů. Podle "pravidla" n+1 jsme tak zvolili n=5 a použili čtyři čtverce 5x5 z [přednáškových slajdů][slides].
 
 ##### Latinské čtverce
 <table style="margin:0px auto;width:60%">
@@ -763,3 +762,4 @@ Potřebujeme kódovat minimálně 6 parametrů => 2 indexy + minimálně 4 čtve
 Proveď v editoru akce v posloupnosti New, SelectLine, Bold, Delete, JumpStart a Save.
 
 [yrk]: http://www.york.ac.uk/depts/maths/tables/orthogonal.htm "Orthogonal Arrays (Taguchi Designs)"
+[slides]: https://cw.fel.cvut.cz/wiki/_media/courses/a4m33tvs/prednasky/02.optimalizace.pdf "Optimalizace sady testů"
