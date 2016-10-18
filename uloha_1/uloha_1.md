@@ -516,6 +516,7 @@ významné hodnoty = možné akce na jednotlivých pozicích (podle zadání)
 V úloze jsme potřebovali do čtverce zakódovat až tři významné hodnoty a zároveň šest parametrů. Podle "pravidla" n+1 jsme tak zvolili n=5 a použili čtyři čtverce 5x5 z [přednáškových slajdů][slides].
 
 ##### Latinské čtverce
+###### C1
 <table style="margin:0px auto;width:60%">
 	<tr style="">
 		<td style="text-align: center;">0</td>
@@ -553,7 +554,7 @@ V úloze jsme potřebovali do čtverce zakódovat až tři významné hodnoty a 
 		<td style="text-align: center;">3</td>
 	</td>
 </table>
-<div style="height: 1em"></div>
+###### C2
 <table style="margin:0px auto;width:60%">
 	<tr style="">
 		<td style="text-align: center;">0</td>
@@ -591,7 +592,7 @@ V úloze jsme potřebovali do čtverce zakódovat až tři významné hodnoty a 
 		<td style="text-align: center;">2</td>
 	</td>
 </table>
-<div style="height: 1em"></div>
+###### C3
 <table style="margin:0px auto;width:60%">
 	<tr style="">
 		<td style="text-align: center;">0</td>
@@ -629,7 +630,7 @@ V úloze jsme potřebovali do čtverce zakódovat až tři významné hodnoty a 
 		<td style="text-align: center;">1</td>
 	</td>
 </table>
-<div style="height: 1em"></div>
+###### C4
 <table style="margin:0px auto;width:60%">
 	<tr style="">
 		<td style="text-align: center;">0</td>
@@ -729,6 +730,161 @@ V úloze jsme potřebovali do čtverce zakódovat až tři významné hodnoty a 
 		<td style="text-align: left;">SaveAs</td>
 	</td>
 </table>
+
+##### Latinské čtverce s významnými hodnotami
+###### C1 (třetí akce)
+<table style="margin:0px auto;width:60%">
+	<tr style="">
+		<td style="text-align: center;">Bold</td>
+		<td style="text-align: center;">Normal</td>
+		<td style="text-align: center;">Cursive</td>
+		<td style="text-align: center;">Bold</td>
+		<td style="text-align: center;">Normal</td>
+	</td>
+	<tr style="">
+		<td style="text-align: center;">Normal</td>
+		<td style="text-align: center;">Cursive</td>
+		<td style="text-align: center;">Bold</td>
+		<td style="text-align: center;">Normal</td>
+		<td style="text-align: center;">Bold</td>
+	</td>
+	<tr style="">
+		<td style="text-align: center;">Cursive</td>
+		<td style="text-align: center;">Bold</td>
+		<td style="text-align: center;">Normal</td>
+		<td style="text-align: center;">Bold</td>
+		<td style="text-align: center;">Normal</td>
+	</td>
+	<tr style="">
+		<td style="text-align: center;">Bold</td>
+		<td style="text-align: center;">Normal</td>
+		<td style="text-align: center;">Bold</td>
+		<td style="text-align: center;">Normal</td>
+		<td style="text-align: center;">Cursive</td>
+	</td>
+	<tr style="">
+		<td style="text-align: center;">Normal</td>
+		<td style="text-align: center;">Bold</td>
+		<td style="text-align: center;">Normal</td>
+		<td style="text-align: center;">Cursive</td>
+		<td style="text-align: center;">Bold</td>
+	</td>
+</table>
+###### C2 (čtvrtá akce)
+<table style="margin:0px auto;width:60%">
+	<tr style="">
+		<td style="text-align: center;">Delete</td>
+		<td style="text-align: center;">Insert</td>
+		<td style="text-align: center;">Delete</td>
+		<td style="text-align: center;">Insert</td>
+		<td style="text-align: center;">Delete</td>
+	</td>
+	<tr style="">
+		<td style="text-align: center;">Delete</td>
+		<td style="text-align: center;">Insert</td>
+		<td style="text-align: center;">Delete</td>
+		<td style="text-align: center;">Delete</td>
+		<td style="text-align: center;">Insert</td>
+	</td>
+	<tr style="">
+		<td style="text-align: center;">Delete</td>
+		<td style="text-align: center;">Delete</td>
+		<td style="text-align: center;">Insert</td>
+		<td style="text-align: center;">Delete</td>
+		<td style="text-align: center;">Insert</td>
+	</td>
+	<tr style="">
+		<td style="text-align: center;">Insert</td>
+		<td style="text-align: center;">Delete</td>
+		<td style="text-align: center;">Insert</td>
+		<td style="text-align: center;">Delete</td>
+		<td style="text-align: center;">Delete</td>
+	</td>
+	<tr style="">
+		<td style="text-align: center;">Insert</td>
+		<td style="text-align: center;">Delete</td>
+		<td style="text-align: center;">Delete</td>
+		<td style="text-align: center;">Insert</td>
+		<td style="text-align: center;">Delete</td>
+	</td>
+</table>
+###### C3 (pátá akce)
+<table style="margin:0px auto;width:60%">
+	<tr style="">
+		<td style="text-align: center;">JumpStart</td>
+		<td style="text-align: center;">JumpEnd</td>
+		<td style="text-align: center;">PageUp</td>
+		<td style="text-align: center;">JumpStart</td>
+		<td style="text-align: center;">JumpEnd</td>
+	</td>
+	<tr style="">
+		<td style="text-align: center;">JumpStart</td>
+		<td style="text-align: center;">JumpEnd</td>
+		<td style="text-align: center;">JumpStart</td>
+		<td style="text-align: center;">JumpEnd</td>
+		<td style="text-align: center;">PageUp</td>
+	</td>
+	<tr style="">
+		<td style="text-align: center;">JumpEnd</td>
+		<td style="text-align: center;">PageUp</td>
+		<td style="text-align: center;">JumpStart</td>
+		<td style="text-align: center;">JumpEnd</td>
+		<td style="text-align: center;">JumpStart</td>
+	</td>
+	<tr style="">
+		<td style="text-align: center;">JumpEnd</td>
+		<td style="text-align: center;">JumpStart</td>
+		<td style="text-align: center;">JumpEnd</td>
+		<td style="text-align: center;">PageUp</td>
+		<td style="text-align: center;">JumpStart</td>
+	</td>
+	<tr style="">
+		<td style="text-align: center;">PageUp</td>
+		<td style="text-align: center;">JumpStart</td>
+		<td style="text-align: center;">JumpEnd</td>
+		<td style="text-align: center;">JumpStart</td>
+		<td style="text-align: center;">JumpEnd</td>
+	</td>
+</table>
+###### C4 (šestá akce)
+<table style="margin:0px auto;width:60%">
+	<tr style="">
+		<td style="text-align: center;">Save</td>
+		<td style="text-align: center;">SaveAs</td>
+		<td style="text-align: center;">Cancel</td>
+		<td style="text-align: center;">Save</td>
+		<td style="text-align: center;">SaveAs</td>
+	</td>
+	<tr style="">
+		<td style="text-align: center;">SaveAs</td>
+		<td style="text-align: center;">Save</td>
+		<td style="text-align: center;">SaveAs</td>
+		<td style="text-align: center;">Cancel</td>
+		<td style="text-align: center;">Save</td>
+	</td>
+	<tr style="">
+		<td style="text-align: center;">Save</td>
+		<td style="text-align: center;">SaveAs</td>
+		<td style="text-align: center;">Save</td>
+		<td style="text-align: center;">SaveAs</td>
+		<td style="text-align: center;">Cancel</td>
+	</td>
+	<tr style="">
+		<td style="text-align: center;">Cancel</td>
+		<td style="text-align: center;">Save</td>
+		<td style="text-align: center;">SaveAs</td>
+		<td style="text-align: center;">Save</td>
+		<td style="text-align: center;">SaveAs</td>
+	</td>
+	<tr style="">
+		<td style="text-align: center;">SaveAs</td>
+		<td style="text-align: center;">Cancel</td>
+		<td style="text-align: center;">Save</td>
+		<td style="text-align: center;">SaveAs</td>
+		<td style="text-align: center;">Save</td>
+	</td>
+</table>
+<div style="height: 1em"></div>
 
 ##### Testovací případy
 1. New -> SelectLine -> Bold -> Delete -> JumpStart -> Save
