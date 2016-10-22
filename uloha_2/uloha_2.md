@@ -24,14 +24,13 @@ h6 {
 
 <h1>Strukturální testování - řídicí tok</h1>
 Skupina: <strong>10</strong>
-
 Řešitelé: <strong>Stanke Michal</strong>, <strong>Timr Marek</strong>, <strong>Voříšek Lukáš</strong>
 
 <h2>Zadání úlohy</h2>
 <p>Následující zdrojový Java kód funkce převeďte na graf řídicího toku. Metodou
 hlavních cest sestrojte sadu testovacích cest, které plně pokryjí daný kód.</p>
 
-<pre>
+<pre style="font-size: .8em">
 public int fnc() {
   B999();
   while( B0() ) {
@@ -51,134 +50,148 @@ public int fnc() {
 </pre>
 
 <div class="labeled-img">
-  <img src="graph.png"/>
+  <img src="graph.png" style="max-height: 300px;" />
   <span class="label">obrázek 1 - Model řídícího toku</span>
 </div>
 
 <h2>Hledání hlavních cest</h2>
 TODO: bud vysvetlit vykricniky a hvezdicky nebo to nejak jinak formatovat
-<h6>Cesty délky 1</h6>
-<ul>  
-<li>999</li>
-<li>0</li>
-<li>1</li>
-<li>2</li>
-<li>3</li>
-<li>4</li>
-<li>5!</li>
-<li>6</li>
-<li>7</li>
-<ul>
 
+<div style="float: left; width: 33%; vertical-align: top;">
+	<h6>Cesty délky 1</h6>
+	<ul>  
+		<li>999</li>
+		<li>0</li>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5!</li>
+		<li>6</li>
+		<li>7</li>
+	<ul>
+</div>
 
-<h6>Cesty délky 2</h6>
-<ul>
-<li>999->0</li>
-<li>0->1</li>
-<li>0->7</li>
-<li>1->2</li>
-<li>1->6</li>
-<li>2->3</li>
-<li>3->4</li>
-<li>3->5!</li>
-<li>4->3</li>
-<li>6->3</li>
-<li>7->0</li>
-</ul>
+<div style="float: left; width: 33%; vertical-align: top;">
+	<h6>Cesty délky 2</h6>
+	<ul>
+		<li>999->0</li>
+		<li>0->1</li>
+		<li>0->7</li>
+		<li>1->2</li>
+		<li>1->6</li>
+		<li>2->3</li>
+		<li>3->4</li>
+		<li>3->5!</li>
+		<li>4->3</li>
+		<li>6->3</li>
+		<li>7->0</li>
+	</ul>
+</div>
 
+<div style="float: left; width: 33%; vertical-align: top;">
+	<h6>Cesty délky 3</h6>
+	<ul>
+		<li>999->0->1</li>
+		<li>999->0->7!</li>
+		<li>0->1->2</li>
+		<li>0->1->6</li>
+		<li>0->7->0*</li>
+		<li>1->2->3</li>
+		<li>1->6->3</li>
+		<li>2->3->4!</li>
+		<li>2->3->5!</li>
+		<li>3->4->3*</li>
+		<li>4->3->4*</li>
+		<li>4->3->5!</li>
+		<li>6->3->4!</li>
+		<li>6->3->5!</li>
+		<li>7->0->1</li>
+		<li>7->0->7*</li>
+	</ul>
+</div>
 
-<h6>Cesty délky 3</h6>
-<ul>
-<li>999->0->1</li>
-<li>999->0->7!</li>
-<li>0->1->2</li>
-<li>0->1->6</li>
-<li>0->7->0*</li>
-<li>1->2->3</li>
-<li>1->6->3</li>
-<li>2->3->4!</li>
-<li>2->3->5!</li>
-<li>3->4->3*</li>
-<li>4->3->4*</li>
-<li>4->3->5!</li>
-<li>6->3->4!</li>
-<li>6->3->5!</li>
-<li>7->0->1</li>
-<li>7->0->7*</li>
-</ul>
+<div style="float: left; width: 33%; vertical-align: top;">
+	<h6>Cesty délky 4</h6>
+	<ul>
+		<li>999->0->1->2</li>
+		<li>999->0->1->6</li>
+		<li>0->1->2->3</li>
+		<li>0->1->6->3</li>
+		<li>1->2->3->4!</li>
+		<li>1->2->3->5!</li>
+		<li>1->6->3->4!</li>
+		<li>1->6->3->5!</li>
+		<li>7->0->1->2</li>
+		<li>7->0->1->6</li>
+	</ul>
+</div>
 
+<div style="float: left; width: 33%; vertical-align: top;">
+	<h6>Cesty délky 5</h6>
+	<ul>
+		<li>999->0->1->2->3</li>
+		<li>999->0->1->6->3</li>
+		<li>0->1->2->3->4!</li>
+		<li>0->1->2->3->5!</li>
+		<li>0->1->6->3->4!</li>
+		<li>0->1->6->3->5!</li>
+		<li>7->0->1->2->5</li>
+		<li>7->0->1->6->3</li>
+	</ul>
+</div>
 
-<h6>Cesty délky 4</h6>
-<ul>
-<li>999->0->1->2</li>
-<li>999->0->1->6</li>
-<li>0->1->2->3</li>
-<li>0->1->6->3</li>
-<li>1->2->3->4!</li>
-<li>1->2->3->5!</li>
-<li>1->6->3->4!</li>
-<li>1->6->3->5!</li>
-<li>7->0->1->2</li>
-<li>7->0->1->6</li>
-</ul>
+<div style="float: left; width: 33%; vertical-align: top;">
+	<h6>Cesty délky 6</h6>
+	<ul>
+		<li>999->0->1->2->3->4!</li>
+		<li>999->0->1->2->3->5!</li>
+		<li>999->0->1->6->3->4!</li>
+		<li>999->0->1->6->3->5!</li>
+		<li>7->0->1->2->5->4!</li>
+		<li>7->0->1->2->5->5!</li>
+		<li>7->0->1->6->3->4!</li>
+		<li>7->0->1->6->3->5!</li>
+	</ul>
+</div>
 
-<h6>Cesty délky 5</h6>
-<ul>
-<li>999->0->1->2->3</li>
-<li>999->0->1->6->3</li>
-<li>0->1->2->3->4!</li>
-<li>0->1->2->3->5!</li>
-<li>0->1->6->3->4!</li>
-<li>0->1->6->3->5!</li>
-<li>7->0->1->2->5</li>
-<li>7->0->1->6->3</li>
-</ul>
+<div style="clear: both;"></span>
 
-
-
-<h6>Cesty délky 6</h6>
-<ul>
-<li>999->0->1->2->3->4!</li>
-<li>999->0->1->2->3->5!</li>
-<li>999->0->1->6->3->4!</li>
-<li>999->0->1->6->3->5!</li>
-<li>7->0->1->2->5->4!</li>
-<li>7->0->1->2->5->5!</li>
-<li>7->0->1->6->3->4!</li>
-<li>7->0->1->6->3->5!</li>
-</ul>
+<div class="page-break"></div>
 
 <h2>Hlavní cesty</h2>
-<h5>Nalezené hlavní cesty</h5>
+<h5>Všehcny nalezené hlavní cesty</h5>
 <ol>
-<li>B5!</li>
-<li>B3->B5!</li>
-<li>B999->B0->B7!</li>
-<li>B0->B7->B0*</li>
-<li>B2->B3->B4!</li>
-<li>B2->B3->B5!</li>
-<li>B3->B4->B3*</li>
-<li>B4->B3->B4*</li>
-<li>B4->B3->B5!</li>
-<li>B6->B3->B4!</li>
-<li>B6->B3->B5!</li>
-<li>B1->B2->B3->B4!</li>
-<li>B1->B2->B3->B5!</li>
-<li>B1->B6->B3->B4!</li>
-<li>B1->B6->B3->B5!</li>
-<li>B0->B1->B2->B3->B4!</li>
-<li>B0->B1->B2->B3->B5!</li>
-<li>B0->B1->B6->B3->B4!</li>
-<li>B0->B1->B6->B3->B5!</li>
-<li>B999->B0->B1->B2->B3->B4!</li>
-<li>B999->B0->B1->B2->B3->B5!</li>
-<li>B999->B0->B1->B6->B3->B4!</li>
-<li>B999->B0->B1->B6->B3->B5!</li>
-<li>B7->B0->B1->B2->B5->B4!</li>
-<li>B7->B0->B1->B2->B5->B5!</li>
-<li>B7->B0->B1->B6->B3->B4!</li>
-<li>B7->B0->B1->B6->B3->B5!</li>
+	<li>B5!</li>
+	<li>B3->B5!</li>
+	<li>B999->B0->B7!</li>
+	<li>B0->B7->B0*</li>
+	<li>B2->B3->B4!</li>
+	<li>B2->B3->B5!</li>
+	<li>B3->B4->B3*</li>
+	<li>B4->B3->B4*</li>
+	<li>B4->B3->B5!</li>
+	<li>B6->B3->B4!</li>
+	<li>B6->B3->B5!</li>
+	<li>B1->B2->B3->B4!</li>
+	<li>B1->B2->B3->B5!</li>
+	<li>B1->B6->B3->B4!</li>
+	<li>B1->B6->B3->B5!</li>
+	<li>B0->B1->B2->B3->B4!</li>
+	<li>B0->B1->B2->B3->B5!</li>
+	<li>B0->B1->B6->B3->B4!</li>
+	<li>B0->B1->B6->B3->B5!</li>
+	<li>B999->B0->B1->B2->B3->B4!</li>
+	<li>B999->B0->B1->B2->B3->B5!</li>
+	<li>B999->B0->B1->B6->B3->B4!</li>
+	<li>B999->B0->B1->B6->B3->B5!</li>
+	<li>B7->B0->B1->B2->B5->B4!</li>
+	<li>B7->B0->B1->B2->B5->B5!</li>
+	<li>B7->B0->B1->B6->B3->B4!</li>
+	<li>B7->B0->B1->B6->B3->B5!</li>
 </ol>
+
+<div class="page-break"></div>
 
 <h2>Hlavní cesty</h2>
 <p>Z následující tabulky byly vynechány všechny takové cesty, které byly podcestou jiné cesty</p>
@@ -240,6 +253,8 @@ TODO: bud vysvetlit vykricniky a hvezdicky nebo to nejak jinak formatovat
 		<td style="text-align: left;">7->0->1->6->3->5!</td>
 	</td>
 </table>
+
+<div class="page-break"></div>
 
 <h2>Testovací cesty</h2>
 <table style="margin:0px auto">
