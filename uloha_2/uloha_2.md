@@ -55,7 +55,19 @@ public int fnc() {
 </div>
 
 <h2>Hledání hlavních cest</h2>
-TODO: bud vysvetlit vykricniky a hvezdicky nebo to nejak jinak formatovat
+<p>
+	<ol>
+		<li>Nalezni cesty délky 0 (uzly).</li>
+		<li>Kombinuj cesty délky 0 do cest délky 1 (hrany).</li>
+		<li>Kombinuj cesty délky 1 do cest délky 2.</li>
+		<li>atd.</li>
+	</ol>
+	Značení:
+	<ul>
+		<li>! ... cesta nemůže být prodloužena</li>
+		<li>* ... cesta tvoří smyčku</li>
+	</ul>
+</p>
 
 <div style="float: left; width: 33%; vertical-align: top;">
 	<h6>Cesty délky 1</h6>
@@ -155,7 +167,7 @@ TODO: bud vysvetlit vykricniky a hvezdicky nebo to nejak jinak formatovat
 	</ul>
 </div>
 
-<div style="clear: both;"></span>
+<div style="clear: both;"></div>
 
 <div class="page-break"></div>
 
