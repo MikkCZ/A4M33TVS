@@ -214,7 +214,7 @@ Seznam níže obshuje všechny cesty, které jsou konečné, nebo vedou na cyklu
 	jednoduchých cest a tak jsme získali seznam hlavních cest, který je
 	vypsán v následující tabulce.
 </p>
-<table style="margin:0px auto">
+<table style="margin:0px auto;width:40%">
 	<thead style="">
 		<th style="text-align: right">Id cesty</th>
 		<th style="text-align: left">Cesty:</th>
@@ -283,9 +283,9 @@ Seznam níže obshuje všechny cesty, které jsou konečné, nebo vedou na cyklu
 	které průběhy musí tester vyzkoušet, aby bylo zarućeno, že se systém
 	chová správně.
 </p>
-<table style="margin:0px auto">
+<table style="margin:0px auto;width:50%">
 	<thead style="">
-		<th style="text-align: right">Označení testovací cesty (z jakých hlavních cest byla složena):</th>
+		<th style="text-align: right">Označení testovací cesty <br /> (z jakých hlavních cest byla složena):</th>
 		<th style="text-align: left">Cesta:</th>
 	</thead>
 	<tr style="">
