@@ -23,6 +23,12 @@ h6 {
 table {
   font-size: 80%;
 }
+
+table.small-padding td, table.small-padding td+td {
+}
+.first-colum {
+  width: 15em;
+}
 table.no-padding tr,
 table.no-padding td+td,
 table.no-padding td+td pre {
@@ -228,99 +234,84 @@ Jedná se o cesty vzhledem k proměnné *d999*, které začínají v uzlu *n<sub
 <table>
 	<thead>
 		<tr>
-			<th style="width: 35em;">Označení cesty</th>
+			<th class="first-column">Označení cesty</th>
 			<th colspan="10">Cesta</th>
 		</tr>
 	</thead>
 		<tr>
 			<td>du(b999, d999)</td>
-			<td>b999</td><td>b1</td><td>b2</td><td>b12a</td>
-			<td colspan="20"></td>
+			<td>b999, b1, b2, b12a</td>
 		</tr>
 		<tr>
 			<td></td>
-      <td>b999</td><td>b13</td><td>b1</td><td>b2</td><td>b12a</td>
-			<td colspan="20"></td>
+      <td>b999, b13, b1, b2, b12a</td>
 		</tr>
 		<tr>
 			<td></td>
-      <td>b999</td><td>b1</td><td>b3</td><td>b10</td>
-			<td colspan="20"></td>
+      <td>b999, b1, b3, b10</td>
 		</tr>
 		<tr>
 			<td></td>
-      <td>b999</td><td>b13</td><td>b1</td><td>b3</td><td>b10</td>
-			<td colspan="20"></td>
+      <td>b999, b13, b1, b3, b10</td>
 		</tr>
 		<tr>
 			<td></td>
-      <td>b999</td><td>b13</td><td>b1</td><td>b3</td><td>for5</td><td>b5</td><td>b6</td>
-			<td colspan="20"></td>
+      <td>b999, b13, b1, b3, for5, b5, b6</td>
 		</tr>
 		<tr>
 			<td></td>
-      <td>b999</td><td>b1</td><td>b3</td><td>b10</td><td>for5</td><td>b5</td><td>b6</td>
-			<td colspan="20"></td>
+      <td>b999, b1, b3, b10, for5, b5, b6</td>
 		</tr>
 		<tr>
 			<td></td>
-      <td>b999</td><td>b13</td><td>b1</td><td>b3</td><td>b10</td><td>for5</td><td>b5</td><td>b6</td>
-			<td colspan="20"></td>
+      <td>b999, b13, b1, b3, b10, for5, b5, b6</td>
 		</tr>
 		<tr>
 			<td></td>
-      <td>b999</td><td>b1</td><td>b3</td><td>for5</td><td>b5</td><td>b6</td><td>b5</td><td>b6</td>
-			<td colspan="20"></td>
+      <td>b999, b1, b3, for5, b5, b6, b5, b6</td>
 		</tr>
 		<tr>
 			<td></td>
-      <td>b999</td><td>b13</td><td>b1</td><td>b3</td><td>for5</td><td>b5</td><td>b6</td><td>b5</td><td>b6</td>
-			<td colspan="20"></td>
+      <td>b999, b13, b1, b3, for5, b5, b6, b5, b6</td>
 		</tr>
 		<tr>
 			<td></td>
-      <td>b999</td><td>b1</td><td>b3</td><td>b10</td><td>for5</td><td>b5</td><td>b6</td><td>b5</td><td>b6</td>
-			<td colspan="20"></td>
+      <td>b999, b1, b3, b10, for5, b5, b6, b5, b6</td>
 		</tr>
 		<tr>
 			<td></td>
-      <td>b999</td><td>b13</td><td>b1</td><td>b3</td><td>b10</td><td>for5</td><td>b5</td><td>b6</td><td>b5</td><td>b6</td>
+      <td>b999, b13, b1, b3, b10, for5, b5, b6, b5, b6</td>
 		</tr>
     <!-- next section -->
 		<tr>
 			<td>du(b11, d999)</td>
-      <td colspan="20">prázdná</td>
+      <td colspan="0">prázdná</td>
 		</tr>
     <!-- next section -->
 		<tr>
 			<td>du(b12b, d999)</td>
-      <td colspan="20">prázdná</td>
+      <td colspan="0">prázdná</td>
 		</tr>
     <!-- next section -->
 		<tr>
 			<td>du(b9, d999)</td>
-      <td>b9</td><td>b3</td><td>b10</td>
-      <td colspan="20"></td>
+      <td>b9, b3, b10</td>
 		</tr>
 		<tr>
 			<td></td>
-      <td>b9</td><td>b3</td><td>b10</td><td>for5</td><td>b5</td><td>b6</td>
-			<td colspan="20"></td>
+      <td>b9, b3, b10, for5, b5, b6</td>
 		</tr>
 		<tr>
 			<td></td>
-      <td>b9</td><td>b3</td><td>b10</td><td>for5</td><td>b5</td><td>b6</td><td>b5</td><td>b6</td>
-			<td colspan="20"></td>
+      <td>b9, b3, b10, for5, b5, b6, b5, b6</td>
 		</tr>
 		<tr>
 			<td></td>
-      <td>b9</td><td>b3</td><td>for5</td><td>b5</td><td>b6</td>
-			<td colspan="20"></td>
+      <td>b9, b3, for5, b5, b6</td>
 		</tr>
 		<tr>
 			<td></td>
-      <td>b9</td><td>b3</td><td>for5</td><td>b5</td><td>b6</td><td>b5</td><td>b6</td>
-			<td colspan="20"></td>
+      <td>b9, b3, for5, b5, b6, b5, b6</td>
 		</tr>
 	</tbody>
 </table>
@@ -330,16 +321,175 @@ Jedná se o cesty vzhledem k proměnné *d999*, které začínají v uzlu *n<sub
 
 ### Cesty du(n<sub>i</sub>, n<sub>j</sub>, d999)
 Jedná se o cesty vzhledem k proměnné *d999*, které začínají v uzlu&nbsp;*n<sub>i</sub>*
-a končí v uzlu&nbsp;*n<sub>j</sub>.*
+a končí v uzlu&nbsp;*n<sub>j</sub>*.
+
 
 <table>
 	<thead>
 		<tr>
-			<th style="width: 10em;">Označení cesty</th>
-			<th colspan="20">Cesta</th>
+			<th class="first-column">Označení cesty</th>
+			<th colspan="0">Cesta</th>
 		</tr>
-	</thead>
+  </thead>
   <tbody>
-
+		<tr>
+			<td>du(b999, b12a, d999)</td>
+      <td>b999, b1, b2, b12a</td>
+		</tr>
+		<tr>
+			<td></td>
+      <td>b999, b13, b1, b2, b12a</td>
+		</tr>
+		<tr>
+			<td>du(b999, b10, d999)</td>
+      <td>b999, b1, b3, b10</td>
+		<Itr>
+		<tr>
+			<td></td>
+      <td>b999, b13, b1, b3, b10</td>
+		</tr>
+		<tr>
+			<td>du(b999, b6, d999)</td>
+      <td>b999, b1, b3, for5, b5, b6</td>
+		</tr>
+		<tr>
+			<td></td>
+      <td>b999, b13, b1, b3, for5, b5, b6</td>
+		</tr>
+		<tr>
+			<td></td>
+      <td>b999, b1, b3, b10, for5, b5, b6</td>
+		</tr>
+		<tr>
+			<td></td>
+      <td>b999, b13, b1, b3, b10, for5, b5, b6</td>
+		</tr>
+		<tr>
+			<td></td>
+      <td>b999, b1, b3, for5, b5, b6, b5, b6</td>
+		</tr>
+		<tr>
+			<td></td>
+      <td>b999, b13, b1, b3, for5, b5, b6, b5, b6</td>
+		</tr>
+		<tr>
+			<td></td>
+      <td>b999, b1, b3, b10, for5, b5, b6, b5, b6</td>
+		</tr>
+		<tr>
+			<td></td>
+      <td>b999, b13, b1, b3, b10, for5, b5, b6, b5, b6</td>
+		</tr>
+		<tr>
+			<td>du(b9, b10, d999)</td>
+      <td>b9, b3, b10</td>
+		</tr>
+		<tr>
+			<td>du(b9, b6, d999)</td>
+      <td>b9, b3, b10, for5, b5, b6</td>
+		</tr>
+		<tr>
+			<td></td>
+      <td>b9, b3, b10, for5, b5, b6, b5, b6</td>
+		</tr>
+		<tr>
+			<td></td>
+      <td>b9, b3, for5, b5, b6, </td>
+		</tr>
+		<tr>
+			<td></td>
+      <td>b9, b3, for5, b5, b6, b5, b6</td>
+		</tr>
   </tbody>
 </table>
+
+<div class="page-break"></div>
+
+### Cesty du(b999, nj, d999)
+Cesty od počátečního uzlu *b999* do uzlu *n<sub>j</sub>*.
+
+<table class="small-padding" style="width: 100%;">
+	<thead>
+		<tr>
+			<th class="first-column">Označení cesty</th>
+			<th colspan="15">Cesta</th>
+		</tr>
+  </thead>
+  <tbody>
+		<tr>
+			<td>du(b999, b12a, d999)</td>
+      <td>b999, b1, b2, b12a</td>
+		</tr>
+		<tr>
+			<td></td>
+      <td>b999, b13, b1, b2, b12a</td>
+		</tr>
+		<tr>
+			<td>du(b999, b10, d999)</td>
+      <td>b999, b1, b3, b10</td>
+		</tr>
+		<tr>
+			<td></td>
+      <td>b999, b13, b1, b3, b10</td>
+		</tr>
+		<tr>
+			<td>du(b999, b6, d999)</td>
+      <td>b999, b1, b3, for5, b5, b6</td>
+		</tr>
+    <tr>
+      <td></td>
+      <td>b999, b13, b1, b3, for5, b5, b6</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>b999, b1, b3, b10, for5, b5, b6</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>b999, b13, b1, b3, b10, for5, b5, b6</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>b999, b1, b3, for5, b5, b6, b5, b6</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>b999, b13, b1, b3, for5, b5, b6, b5, b6</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>b999, b1, b3, b10, for5, b5, b6, b5, b6</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>b999, b13, b1, b3, b10, for5, b5, b6, b5, b6</td>
+    </tr>
+		<tr>
+			<td>du(b9, b10, d999)</td>
+      <td>b999, b1, b2, b11, for4, b4, b9, b3, b10</td>
+		</tr>
+		<tr>
+			<td>du(b9, b6, d999)</td>
+      <td>b999, b1, b2, b11, for4, b4, b9, b3, b10, for5, b5, b6</td>
+		</tr>
+    <tr>
+      <td></td>
+      <td>b999, b1, b2, b11, for4, b4, b9, b3, b10, for5, b5, b6, b5, b6</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>b999, b1, b2, b11, for4, b4, b9, b3, for5, b5, b6</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>b999, b1, b2, b11, for4, b4, b9, b3, for5, b5, b6, b5, b6</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="page-break"></div>
+
+## Závěr
+Pomocí datového toku pro proměnnou d999 jsme zjistili, které cesty obsahují
+její definici a použití. Cesty nesmí procházet přes jinou definici *d999*.
+Průchodem těchto cest můžeme otestovat chování (datový tok) pro tuto proměnnou.
