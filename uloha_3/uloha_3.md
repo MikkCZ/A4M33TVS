@@ -23,6 +23,13 @@ h6 {
 table {
   font-size: 80%;
 }
+table.no-padding tr,
+table.no-padding td+td,
+table.no-padding td+td pre {
+	padding-top: 0;
+	padding-bottom: 0;
+	margin: 0;
+}
 </style>
 
 # Strukturální testování - datový tok
@@ -33,45 +40,168 @@ Skupina: **10**
 Následující zdrojový Java kód funkce převeďte na graf řídicího toku (převáděno na datový tok). Nalezněte
 du-cesty pro vybranou proměnnou ?999.
 
+<table class="no-padding">
+<tr>
+<td>B999</td>
+<td>
 <pre style="font-size: .8em">
 public int fnc() {
 	B999();
 	int d999 = 360;
 	if( B0() ) then {
+</pre>
+</td>
+</tr>
+<tr>
+<td>B13</td>
+<td>
+<pre style="font-size: .8em">
 		B13();
 		int c13 = 299;
 	}
+</pre>
+</td>
+</tr>
+<tr>
+<td>B1</td>
+<td>
+<pre style="font-size: .8em">
 	if( B1() ) then {
+</pre>
+</td>
+</tr>
+<tr>
+<td>B2</td>
+<td>
+<pre style="font-size: .8em">
 		if( B2() ) then {
+</pre>
+</td>
+</tr>
+<tr>
+<td>B12a</td>
+<td>
+<pre style="font-size: .8em">
 			B12();
 			int c12 = d999;
+</pre>
+</td>
+</tr>
+<tr>
+<td>B12b</td>
+<td>
+<pre style="font-size: .8em">
 			d999 = 206;
 		}
+</pre>
+</td>
+</tr>
+<tr>
+<td>B11</td>
+<td>
+<pre style="font-size: .8em">
 		else {
 			B11();
 			int d11 = 996;
 			d999 = 133;
 		}
-		for(int d4 = 0; B4(d4); d4++ ) {
+</pre>
+</td>
+</tr>
+<tr>
+<td>FOR4</td>
+<td>
+<pre style="font-size: .8em">
+		<strong>for(int d4 = 0;</strong> B4(d4); d4++ ) {
+</pre>
+</td>
+</tr>
+<tr>
+<td>B4</td>
+<td>
+<pre style="font-size: .8em">
+		for(int d4 = 0; <strong>B4(d4);</strong> d4++ ) {
+</pre>
+</td>
+</tr>
+<tr>
+<td>B8</td>
+<td>
+<pre style="font-size: .8em">
+		for(int d4 = 0; B4(d4); <strong>d4++</strong> ) {
 			B8();
 			int c8 = 837;
 		}
+</pre>
+</td>
+</tr>
+<tr>
+<td>B9</td>
+<td>
+<pre style="font-size: .8em">
 		B9();
 		int b9 = 814;
 		d999 = 42;
 	}
+</pre>
+</td>
+</tr>
+<tr>
+<td>B3</td>
+<td>
+<pre style="font-size: .8em">
 	if( B3() ) then {
+</pre>
+</td>
+</tr>
+<tr>
+<td>B10</td>
+<td>
+<pre style="font-size: .8em">
 		B10();
 		int c10 = d999;
 	}
-	for(int a5 = 0; B5(a5); a5++ ) {
+</pre>
+</td>
+</tr>
+<tr>
+<td>FOR5</td>
+<td>
+<pre style="font-size: .8em">
+	for(<strong>int a5 = 0;</strong> B5(a5); a5++ ) {
+</pre>
+</td>
+</tr>
+<tr>
+<td>B5</td>
+<td>
+<pre style="font-size: .8em">
+	for(int a5 = 0; <strong>B5(a5);</strong> a5++ ) {
+</pre>
+</td>
+</tr>
+<tr>
+<td>B6</td>
+<td>
+<pre style="font-size: .8em">
+	for(int a5 = 0; B5(a5); <strong>a5++</strong> ) {
 		B6();
 		int c6 = d999;
 	}
+</pre>
+</td>
+</tr>
+<tr>
+<td>B7</td>
+<td>
+<pre style="font-size: .8em">
 	B7();
 	int a7 = 697;
 }
 </pre>
+</td>
+</tr>
+</table>
 
 
 <div class="page-break"></div>
@@ -155,7 +285,7 @@ Jedná se o cesty vzhledem k proměnné *d999*, které začínají v uzlu *n<sub
 		<tr>
 			<td></td>
       <td>b999</td><td>b13</td><td>b1</td><td>b3</td><td>b10</td><td>for5</td><td>b5</td><td>b6</td><td>b5</td><td>b6</td>
-		</tr> 
+		</tr>
     <!-- next section -->
 		<tr>
 			<td>du(b11, d999)</td>
