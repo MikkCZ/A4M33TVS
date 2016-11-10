@@ -19,15 +19,27 @@ class AutomataParser(inputFile: String) {
   val tableHeaderLine = lines(5)
   val nodeLines = lines.drop(6)
   val events = tableHeaderLine match {
-    case tableHeader(e1, e2, e3) => (e1, e2, e3)
+    case tableHeader(e1, e2, e3) => (Event(e1), Event(e2), Event(e3))
   }
   var nodeMap: Map[String, Node] = Map.empty
+  var eventMap: Map[String, Event] = Map.empty
+  var outputMap: Map[String, Output] = Map.empty
   nodeLines.foreach {
     case nodePattern(name, s1, s2, s3, o1, o2, o3) =>
       val sourceNode = getOrCreateNode(name)
-      sourceNode.addTransition(Transition(events._1, o1, getOrCreateNode(s1)))
-      sourceNode.addTransition(Transition(events._2, o2, getOrCreateNode(s2)))
-      sourceNode.addTransition(Transition(events._3, o3, getOrCreateNode(s3)))
+      sourceNode.addTransition(Transition(events._1, getOrCreateOutput(o1), getOrCreateNode(s1)))
+      sourceNode.addTransition(Transition(events._2, getOrCreateOutput(o2), getOrCreateNode(s2)))
+      sourceNode.addTransition(Transition(events._3, getOrCreateOutput(o3), getOrCreateNode(s3)))
+  }
+
+  val entryNode = getOrCreateNode(entryLine match {
+    case headerPattern(name) => name
+  })
+  val exitNode = getOrCreateNode(exitLine match {
+    case headerPattern(name) => name
+  })
+  val defaultOutput = defaultLine match {
+    case headerPattern(name) => getOrCreateOutput(name)
   }
 
   def getOrCreateNode(name: String) = {
@@ -40,14 +52,14 @@ class AutomataParser(inputFile: String) {
     }
   }
 
-  val entryNode = getOrCreateNode(entryLine match {
-    case headerPattern(name) => name
-  })
-  val exitNode = getOrCreateNode(exitLine match {
-    case headerPattern(name) => name
-  })
-  val defaultOutput = defaultLine match {
-    case headerPattern(name) => name
+  def getOrCreateOutput(name: String) = {
+    if(outputMap.contains(name)) {
+      outputMap(name)
+    }else {
+      val symbol = Output(name)
+      outputMap = outputMap + (name -> symbol)
+      symbol
+    }
   }
 
   def getAutomata = {

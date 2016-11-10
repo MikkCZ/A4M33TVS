@@ -3,5 +3,6 @@ package io.maxwell.automata
 /**
   * @author Marek Timr
   */
-class Automata(entryNode: Node, exitNode: Node, defaultOutput: String, nodes: Map[String, Node]) {
+class Automata(val entryNode: Node, val exitNode: Node, val defaultOutput: Output, val nodes: Map[String, Node]) {
+
 }
