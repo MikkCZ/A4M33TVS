@@ -6,12 +6,12 @@ import scala.io.Source
   * @author Marek Timr
   */
 class AutomataParser(inputFile: String) {
-  val headerPattern = """.*? state, (.*)""".r
-  val tableHeader = """"current state,(.*?),(.*?),(.*?),,(.*?),(.*?),(.*?)""".r
+  val headerPattern = """.*,(.*)""".r
+  val tableHeader = """currentstate,(.*?),(.*?),(.*?),.*""".r
   val nodePattern = """(.*?),(.*?),(.*?),(.*?),,(.*?),(.*?),(.*?)""".r
   val lines = Source.fromFile(inputFile)
     .getLines()
-    .map(line => line.filter(c => c.isWhitespace))
+    .map(line => line.filter(c => !c.isWhitespace))
     .toList
   val entryLine = lines.head
   val exitLine = lines(1)
@@ -19,7 +19,7 @@ class AutomataParser(inputFile: String) {
   val tableHeaderLine = lines(5)
   val nodeLines = lines.drop(6)
   val events = tableHeaderLine match {
-    case tableHeader(e1, e2, e3, _, _, _) => (e1, e2, e3)
+    case tableHeader(e1, e2, e3) => (e1, e2, e3)
   }
   var nodeMap: Map[String, Node] = Map.empty
   nodeLines.foreach {
@@ -43,10 +43,10 @@ class AutomataParser(inputFile: String) {
   val entryNode = getOrCreateNode(entryLine match {
     case headerPattern(name) => name
   })
-  val exitNode = getOrCreateNode(entryLine match {
+  val exitNode = getOrCreateNode(exitLine match {
     case headerPattern(name) => name
   })
-  val defaultOutput = entryLine match {
+  val defaultOutput = defaultLine match {
     case headerPattern(name) => name
   }
 
@@ -55,10 +55,5 @@ class AutomataParser(inputFile: String) {
   }
 
 }
-case class Transition(event: String, symbol: String, target: Node)
 
-case class Node(name: String, var transitions: List[Transition]) {
-  def addTransition(transition: Transition): Unit = {
-    transitions = transitions :+ transition
-  }
-}
+
