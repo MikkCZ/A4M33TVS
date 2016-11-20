@@ -27,9 +27,9 @@ class AutomataParser(inputFile: String) {
   nodeLines.foreach {
     case nodePattern(name, s1, s2, s3, o1, o2, o3) =>
       val sourceNode = getOrCreateNode(name)
-      sourceNode.addTransition(Transition(events._1, getOrCreateOutput(o1), getOrCreateNode(s1)))
-      sourceNode.addTransition(Transition(events._2, getOrCreateOutput(o2), getOrCreateNode(s2)))
-      sourceNode.addTransition(Transition(events._3, getOrCreateOutput(o3), getOrCreateNode(s3)))
+      sourceNode.addTransition(events._1, Transition(events._1, getOrCreateOutput(o1), getOrCreateNode(s1)))
+      sourceNode.addTransition(events._2, Transition(events._2, getOrCreateOutput(o2), getOrCreateNode(s2)))
+      sourceNode.addTransition(events._3, Transition(events._3, getOrCreateOutput(o3), getOrCreateNode(s3)))
   }
 
   val entryNode = getOrCreateNode(entryLine match {
@@ -46,7 +46,7 @@ class AutomataParser(inputFile: String) {
     if (nodeMap.contains(name)) {
       nodeMap(name)
     } else {
-      val node = Node(name, List.empty)
+      val node = Node(name, Map.empty)
       nodeMap = nodeMap + (name -> node)
       node
     }
@@ -64,6 +64,10 @@ class AutomataParser(inputFile: String) {
 
   def getAutomata = {
     new Automata(entryNode, exitNode, defaultOutput, nodeMap)
+  }
+
+  def getEvents = {
+    Array(events._1, events._2, events._3)
   }
 
 }

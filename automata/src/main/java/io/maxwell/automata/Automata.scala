@@ -9,7 +9,7 @@ class Automata(val entryNode: Node, val exitNode: Node, val defaultOutput: Outpu
     def step(node: Node, input: List[Event], output: List[Output]): List[Output] = {
       input match {
         case e::rest =>
-          val transition = node.transitions.find(t => t.event == e).get //je to DFA
+          val transition = node.transitions(e)
           step(transition.target,
               rest,
               output :+ transition.output)
