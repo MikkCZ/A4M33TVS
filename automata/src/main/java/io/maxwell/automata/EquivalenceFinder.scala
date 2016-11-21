@@ -64,28 +64,27 @@ class EquivalenceFinder(automata: Automata, events: Array[Event]) {
               StateWithGroup(targets._3, stateGroup(targets._3)))
         }
     }
-
-    constructTables(tableP1).sortBy(row => row.group.id)
+    constructTables(Table(tableP1), List.empty)
 
   }
 
-  def constructTables(table: List[Row]): List[Row] = {
+  def constructTables(table: Table, tableList: List[Table]): List[Table] = {
     val next = nextTable(table)
-    if (table.map{_.group}.distinct.length == next.map{_.group}.distinct.length) {
-      table
+    if (table.rows.map{_.group}.distinct.length == next.rows.map{_.group}.distinct.length) {
+      tableList :+ table
     } else {
-      constructTables(next)
+      constructTables(next, tableList :+ table)
     }
   }
 
-  def nextTable(table: List[Row]): List[Row] = {
+  def nextTable(table: Table): Table = {
     var groupSequence = 0
     def nextGroupNumber(): Int = {
       groupSequence += 1
       groupSequence
     }
     val newNaming: collection.mutable.Map[State, Group] = mutable.Map.empty
-    val rowsForGroup = table.groupBy(row => row.group)
+    val rowsForGroup = table.rows.groupBy(row => row.group)
 
     for (grouped <- rowsForGroup; //Pfff ???!!!
          rows = grouped._2;
@@ -96,7 +95,7 @@ class EquivalenceFinder(automata: Automata, events: Array[Event]) {
       newNaming += (subscriptRow.state -> Group(groupNumber))
     }
 
-    table.map {
+    Table(table.rows.map {
       row =>
         Row(
           newNaming(row.state),
@@ -105,7 +104,7 @@ class EquivalenceFinder(automata: Automata, events: Array[Event]) {
           StateWithGroup(row.next2.node, newNaming(row.next2.node)),
           StateWithGroup(row.next3.node, newNaming(row.next3.node))
         )
-    }
+    }.sortBy(row => row.group.id))
   }
 
   if (events.length != 3) {
@@ -120,5 +119,6 @@ class EquivalenceFinder(automata: Automata, events: Array[Event]) {
 
   case class Row(group: Group, state: State, next1: StateWithGroup, next2: StateWithGroup, next3: StateWithGroup)
 
+  case class Table(rows: List[Row])
 
 }

@@ -13,7 +13,6 @@ object Application {
     val automata = inputParser.getAutomata
 
     val eqFinder = new EquivalenceFinder(automata, inputParser.getEvents)
-    val table = eqFinder.findEquivalence()
-    print(table)
+    val tables = eqFinder.findEquivalence()
   }
 }
