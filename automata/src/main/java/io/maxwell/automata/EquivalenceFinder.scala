@@ -111,14 +111,14 @@ class EquivalenceFinder(automata: Automata, events: Array[Event]) {
     throw new IllegalArgumentException(s"je tu hardcodovano, ze eventy jsou presne 3. Dostal jsem ${events.length} event")
   }
 
-  case class State(name: String)
-
-  case class Group(id: Int)
-
-  case class StateWithGroup(node: State, group: Group)
-
-  case class Row(group: Group, state: State, next1: StateWithGroup, next2: StateWithGroup, next3: StateWithGroup)
-
-  case class Table(rows: List[Row])
-
 }
+
+case class State(name: String)
+
+case class Group(id: Int)
+
+case class StateWithGroup(node: State, group: Group)
+
+case class Row(group: Group, state: State, next1: StateWithGroup, next2: StateWithGroup, next3: StateWithGroup)
+
+case class Table(rows: List[Row])
