@@ -38,8 +38,8 @@ class EquivalenceFinder(automata: Automata, events: Array[Event]) {
         new Group(0),
         state,
         StateWithGroup(state, new Group(node._2.name.hashCode)),
-        StateWithGroup(state, new Group(node._2.name.hashCode)),
-        StateWithGroup(state, new Group(node._2.name.hashCode))
+        StateWithGroup(state, new Group(node._3.name.hashCode)),
+        StateWithGroup(state, new Group(node._4.name.hashCode))
       )
     }
 
