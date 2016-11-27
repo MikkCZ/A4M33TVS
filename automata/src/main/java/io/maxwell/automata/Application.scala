@@ -45,7 +45,11 @@ object Application {
       var pairSet: Set[(State, State)] = HashSet.empty
       val qa = pair.head
       val qb = pair.drop(1).head
-      val traditionalTouple = (qa,qb)
+      val traditionalTouple = if (qa.name.compareTo(qb.name) < 0) {
+        (qa,qb)
+      } else {
+        (qb, qa)
+      }
       var touple = (qa,qb)
       while(!pairSet.contains(touple) && !pairSet.contains((touple._2, touple._1)) && !touple._1.equals(touple._2)) {
         val (event: Event, nextPair: (State, State)) = findDistinctEvent(events, tables, touple)
@@ -59,13 +63,18 @@ object Application {
         touple = nextPair
       }
     }
+
+    println("Characterization set:")
     val w = pairToWord.values.toSet
     w.map{
       word =>
-        word.map {event => event.name}.mkString(", ")
-    }.foreach(println)
-
-
+        word.map {event => event.name}.mkString("")
+    }.toList.sorted.foreach(println)
+    println()
+    pairToWord.keySet.map{
+      pair =>
+        s"(${pair._1.name},${pair._2.name}): ${pairToWord.get(pair).get.map{ev => ev.name}.mkString("")}"
+    }.toList.sorted.foreach(println)
   }
 
   def findDistinctEvent(events: Array[Event], tables: List[Table], touple: (State, State)): (Event,(State, State)) = {
