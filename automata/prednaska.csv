@@ -1,0 +1,11 @@
+   entry state, q1
+    exit state, q5
+default output, 1
+
+              , next state, ,,, output
+ current state, a, b, c,   , a, b, c
+q1           , q1, q4, q4,   ,0, 1, 1
+q2           , q1, q5, q5,   ,0, 1, 1
+q3           , q5, q1, q1,   ,0, 1, 1
+q4           , q3, q4, q4,   ,1, 1, 1
+q5           , q2, q5, q5,   ,1, 1, 1
