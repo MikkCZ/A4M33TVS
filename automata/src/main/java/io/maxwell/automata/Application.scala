@@ -16,7 +16,7 @@ object Application {
     } else if (qarow.next3.group != qbrow.next3.group) {
       (events(2), qarow.next3.node, qbrow.next3.node)
     } else {
-      (events(2), qarow.next3.node, qbrow.next3.node)
+      throw new IllegalStateException(s"Toto by se nikdy nemelo stat - nenalezen odlisujici symbol pro ${qarow} a ${qbrow}")
     }
   }
 
