@@ -69,13 +69,17 @@ object Application {
   }
 
   def findDistinctEvent(events: Array[Event], tables: List[Table], touple: (State, State)): (Event,(State, State)) = {
-    val different = tables.find { table =>
+    var i = 0
+    for (table <- tables) {
       val qarow = table.rows.find(row => row.state == touple._1).get
       val qbrow = table.rows.find(row => row.state == touple._2).get
-      qarow.group != qbrow.group
-    }.get
-    val qarow = different.rows.find(row => row.state == touple._1).get
-    val qbrow = different.rows.find(row => row.state == touple._2).get
+      if (qarow.group == qbrow.group) {
+        i = i+1
+      }
+    }
+    val preDifferent = tables(i-1)
+    val qarow = preDifferent.rows.find(row => row.state == touple._1).get
+    val qbrow = preDifferent.rows.find(row => row.state == touple._2).get
     val event = eventForRow(qarow, qbrow, events)
     (event._1, (event._2, event._3))
   }

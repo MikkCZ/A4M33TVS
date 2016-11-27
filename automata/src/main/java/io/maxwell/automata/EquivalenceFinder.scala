@@ -32,6 +32,17 @@ class EquivalenceFinder(automata: Automata, events: Array[Event]) {
           State(row._7.name))
     }
 
+    val tableP0 = croppedNodes.map{node =>
+      val state = node._1
+      Row(
+        new Group(0),
+        state,
+        StateWithGroup(state, new Group(node._2.name.hashCode)),
+        StateWithGroup(state, new Group(node._2.name.hashCode)),
+        StateWithGroup(state, new Group(node._2.name.hashCode))
+      )
+    }
+
     val grouped = croppedNodes.groupBy { row => (row._2, row._3, row._4) } // seskup je podle stejnych vystupu
 
     val numberedGroups = grouped
@@ -47,7 +58,6 @@ class EquivalenceFinder(automata: Automata, events: Array[Event]) {
       stateGroup += (states._1 -> group._2)
     }
 
-
     val tableP1 = numberedGroups.flatMap {
       //Tabulka P1 slide 32 chapter-3.ppt
       group =>
@@ -62,7 +72,7 @@ class EquivalenceFinder(automata: Automata, events: Array[Event]) {
               StateWithGroup(targets._3, stateGroup(targets._3)))
         }
     }
-    constructTables(Table(tableP1), List.empty)
+    constructTables(Table(tableP1), List(Table(tableP0)))
 
   }
 
