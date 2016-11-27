@@ -44,9 +44,7 @@ class EquivalenceFinder(automata: Automata, events: Array[Event]) {
 
     for (group <- numberedGroups; states <- group._1) {
       //napln mapovani
-      stateGroup += (states._2._1 -> group._2)
-      stateGroup += (states._2._2 -> group._2)
-      stateGroup += (states._2._3 -> group._2)
+      stateGroup += (states._1 -> group._2)
     }
 
 
