@@ -30,6 +30,16 @@ object Application {
     val tables = eqFinder.findEquivalence()
     val states = tables.head.rows.map(r => r.state)
 
+    val scFinder = new StateCoverageFinder(automata, events)
+    // Mnozina vstupnich eventu, diky kterym lze navstivit kazdou lokaci
+    val setL = scFinder.find()
+    println(setL)
+    val trCreator = new TransitionCoverageCreator(setL, events)
+    val setT = trCreator.create()
+    // Ke vsem lokacim se pokusime zkonstruovat vstup do vsech ostatnich
+    println(setT)
+
+
     var pairToWord: Map[(State, State), List[Event]] = Map.empty
     for (pair <- states.combinations(2)) {
       var pairSet: Set[(State, State)] = HashSet.empty

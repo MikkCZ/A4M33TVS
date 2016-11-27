@@ -7,4 +7,6 @@ case class Node(name: String, var transitions: Map[Event, Transition]) {
   def addTransition(event: Event, transition: Transition): Unit = {
     transitions = transitions + (event -> transition)
   }
+
+  override def toString: String = name
 }
