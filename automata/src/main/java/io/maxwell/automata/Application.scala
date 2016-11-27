@@ -69,12 +69,27 @@ object Application {
     w.map{
       word =>
         word.map {event => event.name}.mkString("")
-    }.toList.sorted.foreach(println)
+    }.foreach(println)
     println()
     pairToWord.keySet.map{
       pair =>
         s"(${pair._1.name},${pair._2.name}): ${pairToWord.get(pair).get.map{ev => ev.name}.mkString("")}"
     }.toList.sorted.foreach(println)
+    println()
+
+    println("Output traces:")
+    for (state <- automata.nodes.keySet.toList.sorted; word <- w) {
+      print(s"${state} -> ${word.map {event => event.name}.mkString("")}: ")
+      var node = automata.nodes.get(state).get
+      println(
+        word.map(event => {
+          val transition = node.transitions.get(event).get
+          node = transition.target
+          s"${transition.output.name}"
+        }
+        ).mkString(",")
+      )
+    }
   }
 
   def findDistinctEvent(events: Array[Event], tables: List[Table], touple: (State, State)): (Event,(State, State)) = {
