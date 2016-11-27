@@ -47,7 +47,7 @@ object Application {
       val qb = pair.drop(1).head
       val traditionalTouple = (qa,qb)
       var touple = (qa,qb)
-      while(!pairSet.contains(touple) && !pairSet.contains((touple._2, touple._1))) {
+      while(!pairSet.contains(touple) && !pairSet.contains((touple._2, touple._1)) && !touple._1.equals(touple._2)) {
         val (event: Event, nextPair: (State, State)) = findDistinctEvent(events, tables, touple)
         pairSet = pairSet + touple
         if (pairToWord.contains(traditionalTouple)) {
