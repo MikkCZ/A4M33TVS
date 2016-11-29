@@ -30,20 +30,14 @@ class StateCoverageFinder(automata: Automata, events: Array[Event]) {
 
   def scan(node: Node, nodes: mutable.MutableList[Node], nodeMap: mutable.Map[String,List[Event]], outputSet: mutable.Set[List[Event]]) = {
     // Pro kazdy dostupny event
-    events.foreach {
-      event => {
-        val transition = node.transitions(event)
-        if(transition != null) {
-          if(!nodes.contains(transition.target)) {
-            nodes += transition.target
-            nodeMap(transition.target.name) = nodeMap(node.name) :+ event
-            outputSet += (nodeMap(node.name) :+ event)
-          }
-        }
+    for (event <- events) {
+      val transition = node.transitions(event)
+      if (transition != null && !nodes.contains(transition.target)) {
+        nodes += transition.target
+        nodeMap(transition.target.name) = nodeMap(node.name) :+ event
+        outputSet += (nodeMap(node.name) :+ event)
       }
     }
-
   }
-
 
 }
