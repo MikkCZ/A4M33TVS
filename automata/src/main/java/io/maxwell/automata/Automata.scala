@@ -32,5 +32,4 @@ case class Event(name: String)
 
 case class Output(name: String)
 
-case class Transition(event: Event, output: Output, target: Node){
-}
+case class Transition(event: Event, output: Output, target: Node)
