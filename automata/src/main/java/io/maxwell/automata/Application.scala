@@ -8,17 +8,6 @@ import scala.collection.immutable.HashSet
   * @author Marek Timr
   */
 object Application {
-  def eventForRow(qarow: Row, qbrow: Row, events: Array[Event]): (Event, State, State) = {
-    if (qarow.next1.group != qbrow.next1.group) {
-      (events.head, qarow.next1.node, qbrow.next1.node)
-    } else if (qarow.next2.group != qbrow.next2.group) {
-      (events(1), qarow.next2.node, qbrow.next2.node)
-    } else if (qarow.next3.group != qbrow.next3.group) {
-      (events(2), qarow.next3.node, qbrow.next3.node)
-    } else {
-      throw new IllegalStateException(s"Toto by se nikdy nemelo stat - nenalezen odlisujici symbol pro ${qarow} a ${qbrow}")
-    }
-  }
 
   def main(args: Array[String]): Unit = {
     val settings = ConfigFactory.load().getConfig("automata")
@@ -62,7 +51,7 @@ object Application {
       }
       var touple = (qa,qb)
       while(!pairSet.contains(touple) && !pairSet.contains((touple._2, touple._1)) && !touple._1.equals(touple._2)) {
-        val (event: Event, nextPair: (State, State)) = findDistinctEvent(events, tables, touple)
+        val (event: Event, nextPair: (State, State)) = eqFinder.findDistinctEvent(events, tables, touple)
         pairSet = pairSet + touple
         if (pairToWord.contains(traditionalTouple)) {
           val list = pairToWord(traditionalTouple) :+ event
@@ -101,19 +90,4 @@ object Application {
     }
   }
 
-  def findDistinctEvent(events: Array[Event], tables: List[Table], touple: (State, State)): (Event,(State, State)) = {
-    var i = 0
-    for (table <- tables) {
-      val qarow = table.rows.find(row => row.state == touple._1).get
-      val qbrow = table.rows.find(row => row.state == touple._2).get
-      if (qarow.group == qbrow.group) {
-        i = i+1
-      }
-    }
-    val preDifferent = tables(i-1)
-    val qarow = preDifferent.rows.find(row => row.state == touple._1).get
-    val qbrow = preDifferent.rows.find(row => row.state == touple._2).get
-    val event = eventForRow(qarow, qbrow, events)
-    (event._1, (event._2, event._3))
-  }
 }

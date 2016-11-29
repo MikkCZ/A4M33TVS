@@ -115,6 +115,34 @@ class EquivalenceFinder(automata: Automata, events: Array[Event]) {
     }.sortBy(row => row.group.id))
   }
 
+  def findDistinctEvent(events: Array[Event], tables: List[Table], touple: (State, State)): (Event,(State, State)) = {
+    var i = 0
+    for (table <- tables) {
+      val qarow = table.rows.find(row => row.state == touple._1).get
+      val qbrow = table.rows.find(row => row.state == touple._2).get
+      if (qarow.group == qbrow.group) {
+        i = i+1
+      }
+    }
+    val preDifferent = tables(i-1)
+    val qarow = preDifferent.rows.find(row => row.state == touple._1).get
+    val qbrow = preDifferent.rows.find(row => row.state == touple._2).get
+    val event = eventForRow(qarow, qbrow, events)
+    (event._1, (event._2, event._3))
+  }
+
+  def eventForRow(qarow: Row, qbrow: Row, events: Array[Event]): (Event, State, State) = {
+    if (qarow.next1.group != qbrow.next1.group) {
+      (events.head, qarow.next1.node, qbrow.next1.node)
+    } else if (qarow.next2.group != qbrow.next2.group) {
+      (events(1), qarow.next2.node, qbrow.next2.node)
+    } else if (qarow.next3.group != qbrow.next3.group) {
+      (events(2), qarow.next3.node, qbrow.next3.node)
+    } else {
+      throw new IllegalStateException(s"Toto by se nikdy nemelo stat - nenalezen odlisujici symbol pro ${qarow} a ${qbrow}")
+    }
+  }
+
   if (events.length != 3) {
     throw new IllegalArgumentException(s"je tu hardcodovano, ze eventy jsou presne 3. Dostal jsem ${events.length} event")
   }
