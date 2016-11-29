@@ -115,18 +115,18 @@ class EquivalenceFinder(automata: Automata, events: Array[Event]) {
     }.sortBy(row => row.group.id))
   }
 
-  def findDistinctEvent(events: Array[Event], tables: List[Table], touple: (State, State)): (Event,(State, State)) = {
+  def findDistinctEvent(events: Array[Event], tables: List[Table], tuple: (State, State)): (Event,(State, State)) = {
     var i = 0
     for (table <- tables) {
-      val qarow = table.rows.find(row => row.state == touple._1).get
-      val qbrow = table.rows.find(row => row.state == touple._2).get
+      val qarow = table.rows.find(row => row.state == tuple._1).get
+      val qbrow = table.rows.find(row => row.state == tuple._2).get
       if (qarow.group == qbrow.group) {
         i = i+1
       }
     }
     val preDifferent = tables(i-1)
-    val qarow = preDifferent.rows.find(row => row.state == touple._1).get
-    val qbrow = preDifferent.rows.find(row => row.state == touple._2).get
+    val qarow = preDifferent.rows.find(row => row.state == tuple._1).get
+    val qbrow = preDifferent.rows.find(row => row.state == tuple._2).get
     val event = eventForRow(qarow, qbrow, events)
     (event._1, (event._2, event._3))
   }
@@ -149,12 +149,12 @@ class EquivalenceFinder(automata: Automata, events: Array[Event]) {
 
 }
 
-case class State(name: String)
-
 case class Group(id: Int)
 
-case class StateWithGroup(node: State, group: Group)
-
 case class Row(group: Group, state: State, next1: StateWithGroup, next2: StateWithGroup, next3: StateWithGroup)
+
+case class State(name: String)
+
+case class StateWithGroup(node: State, group: Group)
 
 case class Table(rows: List[Row])
