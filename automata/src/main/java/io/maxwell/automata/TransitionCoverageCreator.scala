@@ -10,8 +10,8 @@ class TransitionCoverageCreator(stateCoverage: mutable.Set[List[Event]], events:
   def create() = {
     val coverage : mutable.Set[List[Event]] = mutable.Set.empty
 
-    stateCoverage.foreach {
-      list => events.foreach(ev => coverage += (list :+ ev))
+    for (eventList <- stateCoverage; event <-events) {
+      coverage += (eventList :+ event)
     }
     coverage
   }
