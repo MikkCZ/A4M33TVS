@@ -33,11 +33,21 @@ object Application {
     val scFinder = new StateCoverageFinder(automata, events)
     // Mnozina vstupnich eventu, diky kterym lze navstivit kazdou lokaci
     val setL = scFinder.find()
-    println(setL)
+    println("State cover set:")
+    println("{"+setL.map{
+      word =>
+        word.map {event => event.name}.mkString("")
+    }.mkString(",")+"}")
+    println()
     val trCreator = new TransitionCoverageCreator(setL, events)
     val setT = trCreator.create()
     // Ke vsem lokacim se pokusime zkonstruovat vstup do vsech ostatnich
-    println(setT)
+    println("Transition cover set:")
+    println("{"+setT.map{
+      word =>
+        word.map {event => event.name}.mkString("")
+    }.mkString(",")+"}")
+    println()
 
 
     var pairToWord: Map[(State, State), List[Event]] = Map.empty
@@ -66,11 +76,10 @@ object Application {
 
     println("Characterization set:")
     val w = pairToWord.values.toSet
-    w.map{
+    println("{"+w.map{
       word =>
         word.map {event => event.name}.mkString("")
-    }.foreach(println)
-    println()
+    }.mkString(",")+"}")
     pairToWord.keySet.map{
       pair =>
         s"(${pair._1.name},${pair._2.name}): ${pairToWord.get(pair).get.map{ev => ev.name}.mkString("")}"
