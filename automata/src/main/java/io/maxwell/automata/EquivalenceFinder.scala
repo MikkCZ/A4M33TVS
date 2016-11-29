@@ -35,11 +35,11 @@ class EquivalenceFinder(automata: Automata, events: Array[Event]) {
     val tableP0 = croppedNodes.map{node =>
       val state = node._1
       Row(
-        new Group(0),
+        Group(0),
         state,
-        StateWithGroup(state, new Group(node._2.name.hashCode)),
-        StateWithGroup(state, new Group(node._3.name.hashCode)),
-        StateWithGroup(state, new Group(node._4.name.hashCode))
+        StateWithGroup(state, Group(node._2.name.hashCode)),
+        StateWithGroup(state, Group(node._3.name.hashCode)),
+        StateWithGroup(state, Group(node._4.name.hashCode))
       )
     }
 
@@ -139,7 +139,7 @@ class EquivalenceFinder(automata: Automata, events: Array[Event]) {
     } else if (qarow.next3.group != qbrow.next3.group) {
       (events(2), qarow.next3.node, qbrow.next3.node)
     } else {
-      throw new IllegalStateException(s"Toto by se nikdy nemelo stat - nenalezen odlisujici symbol pro ${qarow} a ${qbrow}")
+      throw new IllegalStateException(s"Toto by se nikdy nemelo stat - nenalezen odlisujici symbol pro $qarow a $qbrow")
     }
   }
 

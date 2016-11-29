@@ -71,17 +71,17 @@ object Application {
     }.mkString(",")+"}")
     pairToWord.keySet.map{
       pair =>
-        s"(${pair._1.name},${pair._2.name}): ${pairToWord.get(pair).get.map{ev => ev.name}.mkString("")}"
+        s"(${pair._1.name},${pair._2.name}): ${pairToWord(pair).map{ ev => ev.name}.mkString("")}"
     }.toList.sorted.foreach(println)
     println()
 
     println("Output traces:")
     for (state <- automata.nodes.keySet.toList.sorted; word <- w) {
-      print(s"${state} -> ${word.map {event => event.name}.mkString("")}: ")
-      var node = automata.nodes.get(state).get
+      print(s"$state -> ${word.map { event => event.name}.mkString("")}: ")
+      var node = automata.nodes(state)
       println(
         word.map(event => {
-          val transition = node.transitions.get(event).get
+          val transition = node.transitions(event)
           node = transition.target
           s"${transition.output.name}"
         }

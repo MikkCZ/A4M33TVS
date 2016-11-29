@@ -1,19 +1,17 @@
 package io.maxwell.automata
 
-import scala.collection.mutable.Set
+import scala.collection.mutable
 
 /**
   * @author Vorisek Lukas <lukasvorisek@gmail.com>
   */
-class TransitionCoverageCreator(stateCoverage: Set[List[Event]], events: Array[Event]) {
+class TransitionCoverageCreator(stateCoverage: mutable.Set[List[Event]], events: Array[Event]) {
 
   def create() = {
-    val coverage : Set[List[Event]] = Set.empty
+    val coverage : mutable.Set[List[Event]] = mutable.Set.empty
 
     stateCoverage.foreach {
-      list => (
-        events.foreach(ev => coverage += (list :+ ev))
-        )
+      list => events.foreach(ev => coverage += (list :+ ev))
     }
     coverage
   }

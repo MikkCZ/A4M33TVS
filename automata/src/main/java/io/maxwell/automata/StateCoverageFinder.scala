@@ -2,20 +2,18 @@ package io.maxwell.automata
 
 import io.maxwell.automata.JavaHelpers.DoCommand
 
-import scala.collection.mutable.MutableList
-import scala.collection.mutable.Map
-import scala.collection.mutable.Set
+import scala.collection.mutable
 
 /**
   * @author Vorisek Lukas <lukasvorisek@gmail.com>
   */
 class StateCoverageFinder(automata: Automata, events: Array[Event]) {
-  private var lastFindMapping: Map[String, List[Event]] = null
+  private var lastFindMapping: mutable.Map[String, List[Event]] = _
 
   def find() = {
-    val nodes: MutableList[Node] = MutableList.empty
-    val nodeMap: Map[String, List[Event]] = Map.empty
-    val outputSet: Set[List[Event]] = Set.empty
+    val nodes: mutable.MutableList[Node] = mutable.MutableList.empty
+    val nodeMap: mutable.Map[String, List[Event]] = mutable.Map.empty
+    val outputSet: mutable.Set[List[Event]] = mutable.Set.empty
 
     // EntryNode
     nodes += automata.entryNode
@@ -47,7 +45,7 @@ class StateCoverageFinder(automata: Automata, events: Array[Event]) {
     lastFindMapping
   }
 
-  def scan(node: Node, nodes: MutableList[Node], nodeMap: Map[String,List[Event]], outputSet: Set[List[Event]]) = {
+  def scan(node: Node, nodes: mutable.MutableList[Node], nodeMap: mutable.Map[String,List[Event]], outputSet: mutable.Set[List[Event]]) = {
     // Pro kazdy dostupny event
     events.foreach {
       ev => {
