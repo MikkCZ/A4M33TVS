@@ -37,14 +37,14 @@ public class CvsExport {
     
     private String exportNode(Node n) {
         StringBuilder sb = new StringBuilder();
-        sb.append(String.format("%20s", n.getId()));
+        sb.append(String.format("%20s", n.getName()));
         for(String input : inputs) {
             Edge e = n.getOutput(input);
             sb.append(", ");
             if(e != null) {
-                sb.append(e.getTo().getId());
+                sb.append(e.getTo().getName());
             } else {
-                sb.append(n.getId());
+                sb.append(n.getName());
             }
         }
         sb.append(",   ");
@@ -52,7 +52,7 @@ public class CvsExport {
             Edge e = n.getOutput(input);
             sb.append(", ");
             if(e != null) {
-                sb.append(e.getTo().getId());
+                sb.append(e.getOutput());
             } else {
                 sb.append("noop");
             }
@@ -91,7 +91,7 @@ public class CvsExport {
             sb.append(e);
         }
         sb.append(",   ");
-        for(String e : outputs) {
+        for(String e : inputs) {
             sb.append(", ");
             sb.append(e);
         }

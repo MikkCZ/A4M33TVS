@@ -3,9 +3,9 @@
       default output, noop
 
                     , next state, ,,, output
-       current state, Accept, Edit, Hide, Publish, Reject, Return, Submit, Withdraw,   , Accepts_waiting_8dae, Accepts_published_6017, Edits_submitted_edda, Edits_draft_9694, Hides_submitted_edda, Publishs_published_6017, Rejects_rejected_5c05, Returns_draft_9694, Submits_submitted_edda, Withdraws_draft_9694
-      s_waiting_8dae, s_waiting_8dae, s_waiting_8dae, s_submitted_edda, s_published_6017, s_waiting_8dae, s_waiting_8dae, s_waiting_8dae, s_waiting_8dae,   , s_waiting_8dae, noop, s_submitted_edda, s_published_6017, noop, noop, noop, noop
-    s_published_6017, s_published_6017, s_published_6017, s_submitted_edda, s_published_6017, s_published_6017, s_published_6017, s_published_6017, s_published_6017,   , s_published_6017, noop, s_submitted_edda, s_published_6017, noop, noop, noop, noop
-        s_draft_9694, s_draft_9694, s_draft_9694, s_draft_9694, s_draft_9694, s_draft_9694, s_draft_9694, s_submitted_edda, s_draft_9694,   , noop, s_draft_9694, noop, noop, noop, s_draft_9694, s_submitted_edda, s_draft_9694
-    s_submitted_edda, s_published_6017, s_submitted_edda, s_submitted_edda, s_submitted_edda, s_rejected_5c05, s_draft_9694, s_submitted_edda, s_draft_9694,   , s_published_6017, s_submitted_edda, s_submitted_edda, noop, s_rejected_5c05, s_draft_9694, s_submitted_edda, s_draft_9694
-     s_rejected_5c05, s_rejected_5c05, s_rejected_5c05, s_rejected_5c05, s_rejected_5c05, s_rejected_5c05, s_rejected_5c05, s_rejected_5c05, s_rejected_5c05,   , noop, noop, noop, noop, s_rejected_5c05, noop, noop, noop
+       current state, Accept, Edit, Hide, Publish, Reject, Return, Submit, Withdraw,   , Accept, Edit, Hide, Publish, Reject, Return, Submit, Withdraw
+             Waiting, Waiting, Waiting, Submitted, Published, Waiting, Waiting, Waiting, Waiting,   , Accept/Waiting, noop, Hide/Submitted, Publish/Published, noop, noop, noop, noop
+           Published, Published, Published, Submitted, Published, Published, Published, Published, Published,   , Accept/Published, noop, Hide/Submitted, Publish/Published, noop, noop, noop, noop
+               Draft, Draft, Draft, Draft, Draft, Draft, Draft, Submitted, Draft,   , noop, Edit/Draft, noop, noop, noop, Return/Draft, Submit/Submitted, Withdraw/Draft
+           Submitted, Published, Submitted, Submitted, Submitted, Rejected, Draft, Submitted, Draft,   , Accept/Published, Edit/Submitted, Hide/Submitted, noop, Reject/Rejected, Return/Draft, Submit/Submitted, Withdraw/Draft
+            Rejected, Rejected, Rejected, Rejected, Rejected, Rejected, Rejected, Rejected, Rejected,   , noop, noop, noop, noop, Reject/Rejected, noop, noop, noop

@@ -75,7 +75,7 @@ public class DotParser {
         System.out.println("   To:    " + commandSplit[1]);
         System.out.println("   Input: " + input);
         
-        Edge ed = new Edge(nodesMap.get(commandSplit[0]), nodesMap.get(commandSplit[1]), input, input + commandSplit[1]);
+        Edge ed = new Edge(nodesMap.get(commandSplit[0]), nodesMap.get(commandSplit[1]), input, input + "/" + nodesMap.get(commandSplit[1]).getName());
         edgesList.add(ed);
         nodesMap.get(commandSplit[0]).addOutput(ed);
         nodesMap.get(commandSplit[1]).addInput(ed);
