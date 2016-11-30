@@ -61,7 +61,7 @@ public class Node {
 
     public void addInput(Edge input) {
         this.input.add(input);
-        this.outputMap.put(input.getInput(), input);
+        this.inputMap.put(input.getInput(), input);
     }
 
     public ArrayList<Edge> getOutput() {
