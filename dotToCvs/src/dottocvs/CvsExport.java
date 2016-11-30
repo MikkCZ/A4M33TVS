@@ -43,6 +43,8 @@ public class CvsExport {
             sb.append(", ");
             if(e != null) {
                 sb.append(e.getTo().getId());
+            } else {
+                sb.append(n.getId());
             }
         }
         sb.append(",   ");
@@ -51,6 +53,8 @@ public class CvsExport {
             sb.append(", ");
             if(e != null) {
                 sb.append(e.getTo().getId());
+            } else {
+                sb.append("noop");
             }
         }
         sb.append("\n");
