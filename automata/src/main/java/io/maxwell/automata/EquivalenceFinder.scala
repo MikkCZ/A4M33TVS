@@ -129,10 +129,6 @@ class EquivalenceFinder(automata: Automata, events: Array[Event]) {
     (events(diff._2), diff._1._1.node, diff._1._2.node)
   }
 
-  if (events.length != 3) {
-    throw new IllegalArgumentException(s"je tu hardcodovano, ze eventy jsou presne 3. Dostal jsem ${events.length} event")
-  }
-
 }
 
 case class Group(id: Int)
