@@ -4,8 +4,8 @@
 
                     , next state, ,,, output
        current state, Accept, Edit, Hide, Publish, Reject, Return, Submit, Withdraw,   , Accept, Edit, Hide, Publish, Reject, Return, Submit, Withdraw
-             Waiting, Waiting, Waiting, Submitted, Published, Waiting, Waiting, Waiting, Waiting,   , Accept/Waiting, noop, Hide/Submitted, Publish/Published, noop, noop, noop, noop
-           Published, Published, Published, Submitted, Published, Published, Published, Published, Published,   , Accept/Published, noop, Hide/Submitted, Publish/Published, noop, noop, noop, noop
-               Draft, Draft, Draft, Draft, Draft, Draft, Draft, Submitted, Draft,   , noop, Edit/Draft, noop, noop, noop, Return/Draft, Submit/Submitted, Withdraw/Draft
-           Submitted, Published, Submitted, Submitted, Submitted, Rejected, Draft, Submitted, Draft,   , Accept/Published, Edit/Submitted, Hide/Submitted, noop, Reject/Rejected, Return/Draft, Submit/Submitted, Withdraw/Draft
-            Rejected, Rejected, Rejected, Rejected, Rejected, Rejected, Rejected, Rejected, Rejected,   , noop, noop, noop, noop, Reject/Rejected, noop, noop, noop
+             Waiting, Waiting, Waiting, Submitted, Published, Waiting, Waiting, Waiting, Waiting,   , noop, noop, Hide/Submitted, Publish/Published, noop, noop, noop, noop
+           Published, Published, Published, Submitted, Published, Published, Published, Published, Published,   , noop, noop, Hide/Submitted, noop, noop, noop, noop, noop
+               Draft, Draft, Draft, Draft, Draft, Draft, Draft, Submitted, Draft,   , noop, Edit/Draft, noop, noop, noop, noop, Submit/Submitted, noop
+           Submitted, Published, Submitted, Submitted, Submitted, Rejected, Draft, Submitted, Draft,   , Accept/Published, Edit/Submitted, noop, noop, Reject/Rejected, Return/Draft, noop, Withdraw/Draft
+            Rejected, Rejected, Rejected, Rejected, Rejected, Rejected, Rejected, Rejected, Rejected,   , noop, noop, noop, noop, noop, noop, noop, noop

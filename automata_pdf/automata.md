@@ -413,7 +413,71 @@ s96 -> (e08 e08): o54,o54
   <img src="smalldb-b56a5bd0b40e84dd66c9a9564203738c.png" />
   <span class="label">obrázek 2 - zadaný graf stavů článku v redakčním systému</span>
 </div>
+<div>
+<pre style="font-size: .8em">
+entry state: Draft
+exit state: Draft
+default output: noop
+transition: Waiting -> Accept/Waiting -> Waiting
+transition: Draft -> Hide/Submitted -> Submitted
+transition: Submitted -> Publish/Published -> Published
+transition: Waiting -> Accept/Published -> Published
+transition: Draft -> Hide/Submitted -> Submitted
+transition: Submitted -> Publish/Published -> Published
+transition: Published -> Edit/Draft -> Draft
+transition: Waiting -> Accept/Published -> Published
+transition: Published -> Edit/Submitted -> Submitted
+transition: Draft -> Hide/Submitted -> Submitted
+transition: Rejected -> Reject/Rejected -> Rejected
+transition: Rejected -> Reject/Rejected -> Rejected
+</pre>
+</div>
 
+## Charakterizační množina
+<pre>
+W = {(Accept), (Edit)}
+</pre>
+<div style="vertical-align: top;">
+<pre>
+(Draft,Published): Accept
+(Draft,Rejected): Accept
+(Draft,Submitted): Accept
+(Draft,Waiting): Accept
+(Published,Rejected): Accept
+(Published,Submitted): Edit
+(Published,Waiting): Accept
+(Rejected,Submitted): Accept
+(Rejected,Waiting): Accept
+(Submitted,Waiting): Accept
+</pre>
+</div>
+
+## Output traces
+<div style="vertical-align: top;">
+<pre>
+Draft -> (Accept): noop
+Draft -> (Edit): Edit/Draft
+Published -> (Accept): noop
+Published -> (Edit): noop
+Rejected -> (Accept): noop
+Rejected -> (Edit): noop
+Submitted -> (Accept): Accept/Published
+Submitted -> (Edit): Edit/Submitted
+Waiting -> (Accept): noop
+Waiting -> (Edit): noop
+</pre>
+</div>
+
+## State cover set
+
+<pre>
+{(), (Submit Accept), (Submit Reject), (Submit)}
+</pre>
+
+## Transition cover set
+<pre>
+{(Accept), (Edit), (Hide), (Publish), (Reject), (Return), (Submit Accept Accept), (Submit Accept Edit), (Submit Accept Hide), (Submit Accept Publish), (Submit Accept Reject), (Submit Accept Return), (Submit Accept Submit), (Submit Accept Withdraw), (Submit Accept), (Submit Edit), (Submit Hide), (Submit Publish), (Submit Reject Accept), (Submit Reject Edit), (Submit Reject Hide), (Submit Reject Publish), (Submit Reject Reject), (Submit Reject Return), (Submit Reject Submit), (Submit Reject Withdraw), (Submit Reject), (Submit Return), (Submit Submit), (Submit Withdraw), (Submit), (Withdraw)}
+</pre>
 
 <div class="page-break"></div>
 
