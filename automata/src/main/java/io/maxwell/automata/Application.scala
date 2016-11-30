@@ -74,7 +74,7 @@ object Application {
 
     println("Output traces:")
     for (state <- automata.nodes.keySet.toList.sorted; word <- w) {
-      print(s"$state -> ${word.map { event => event.name}.mkString("")}: ")
+      print(s"$state -> ${word.map { event => event.name}.mkString("(", " ", ")")}: ")
       var node = automata.nodes(state)
       println(word.map(
         event => {
