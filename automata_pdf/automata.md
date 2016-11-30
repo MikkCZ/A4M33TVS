@@ -252,6 +252,149 @@ W = {(e08 e08), (e08 e20), (e08 e38), (e08), (e20 e08), (e20), (e38)}
 
 <div style="clear: both;"></div>
 
+## Output traces
+
+<div style="float: left; width: 33%; vertical-align: top;">
+<pre>
+s01 -> (e08): o54
+s01 -> (e20): o54
+s01 -> (e20 e08): o54,o87
+s01 -> (e08 e20): o54,o54
+s01 -> (e08 e38): o54,o87
+s01 -> (e38): o54
+s01 -> (e08 e08): o54,o87
+s08 -> (e08): o54
+s08 -> (e20): o87
+s08 -> (e20 e08): o87,o54
+s08 -> (e08 e20): o54,o54
+s08 -> (e08 e38): o54,o87
+s08 -> (e38): o87
+s08 -> (e08 e08): o54,o87
+s10 -> (e08): o87
+s10 -> (e20): o54
+s10 -> (e20 e08): o54,o54
+s10 -> (e08 e20): o87,o87
+s10 -> (e08 e38): o87,o54
+s10 -> (e38): o87
+s10 -> (e08 e08): o87,o87
+s11 -> (e08): o54
+s11 -> (e20): o54
+s11 -> (e20 e08): o54,o87
+</pre>
+</div>
+
+<div style="float: left; width: 33%; vertical-align: top;">
+<pre>
+s11 -> (e08 e20): o54,o54
+s11 -> (e08 e38): o54,o54
+s11 -> (e38): o54
+s11 -> (e08 e08): o54,o54
+s14 -> (e08): o54
+s14 -> (e20): o54
+s14 -> (e20 e08): o54,o54
+s14 -> (e08 e20): o54,o87
+s14 -> (e08 e38): o54,o87
+s14 -> (e38): o87
+s14 -> (e08 e08): o54,o87
+s20 -> (e08): o54
+s20 -> (e20): o87
+s20 -> (e20 e08): o87,o54
+s20 -> (e08 e20): o54,o54
+s20 -> (e08 e38): o54,o87
+s20 -> (e38): o54
+s20 -> (e08 e08): o54,o54
+s27 -> (e08): o87
+s27 -> (e20): o54
+s27 -> (e20 e08): o54,o87
+s27 -> (e08 e20): o87,o54
+s27 -> (e08 e38): o87,o87
+s27 -> (e38): o54
+</pre>
+</div>
+
+<div style="float: left; width: 33%; vertical-align: top;">
+<pre>
+s27 -> (e08 e08): o87,o54
+s42 -> (e08): o87
+s42 -> (e20): o54
+s42 -> (e20 e08): o54,o54
+s42 -> (e08 e20): o87,o54
+s42 -> (e08 e38): o87,o54
+s42 -> (e38): o54
+s42 -> (e08 e08): o87,o54
+s49 -> (e08): o87
+s49 -> (e20): o87
+s49 -> (e20 e08): o87,o54
+s49 -> (e08 e20): o87,o87
+s49 -> (e08 e38): o87,o87
+s49 -> (e38): o54
+s49 -> (e08 e08): o87,o87
+s64 -> (e08): o54
+s64 -> (e20): o54
+s64 -> (e20 e08): o54,o54
+s64 -> (e08 e20): o54,o54
+s64 -> (e08 e38): o54,o87
+s64 -> (e38): o54
+s64 -> (e08 e08): o54,o87
+s67 -> (e08): o54
+s67 -> (e20): o87
+</pre>
+</div>
+
+<div style="clear: both;"></div>
+
+<div class="page-break"></div>
+
+<div style="float: left; width: 33%; vertical-align: top;">
+<pre>
+s67 -> (e20 e08): o87,o87
+s67 -> (e08 e20): o54,o87
+s67 -> (e08 e38): o54,o87
+s67 -> (e38): o54
+s67 -> (e08 e08): o54,o87
+s71 -> (e08): o87
+s71 -> (e20): o87
+s71 -> (e20 e08): o87,o87
+s71 -> (e08 e20): o87,o54
+s71 -> (e08 e38): o87,o54
+s71 -> (e38): o87
+</pre>
+</div>
+
+<div style="float: left; width: 33%; vertical-align: top;">
+<pre>
+s71 -> (e08 e08): o87,o54
+s72 -> (e08): o54
+s72 -> (e20): o54
+s72 -> (e20 e08): o54,o54
+s72 -> (e08 e20): o54,o54
+s72 -> (e08 e38): o54,o54
+s72 -> (e38): o87
+s72 -> (e08 e08): o54,o87
+s87 -> (e08): o87
+s87 -> (e20): o87
+s87 -> (e20 e08): o87,o54
+</pre>
+</div>
+
+<div style="float: left; width: 33%; vertical-align: top;">
+<pre>
+s87 -> (e08 e20): o87,o54
+s87 -> (e08 e38): o87,o54
+s87 -> (e38): o87
+s87 -> (e08 e08): o87,o87
+s96 -> (e08): o54
+s96 -> (e20): o54
+s96 -> (e20 e08): o54,o54
+s96 -> (e08 e20): o54,o54
+s96 -> (e08 e38): o54,o87
+s96 -> (e38): o87
+s96 -> (e08 e08): o54,o54
+</pre>
+</div>
+
+<div style="clear: both;"></div>
+
 ## State cover set
 <pre>
 {(e08 e08 e08), (e08 e08 e38), (e08 e08), (e08 e20 e20 e20), (e08 e20 e20), (e08 e20), (e08 e38 e20), (e08 e38), (e08), (e38 e08 e08), (e38 e08 e20), (e38 e08), (e38 e38), (e38)}
