@@ -21,20 +21,19 @@ object Application {
     // Mnozina vstupnich eventu, diky kterym lze navstivit kazdou lokaci
     val setL = new StateCoverageFinder(automata, events).find()
     println("State cover set:")
-    println("{"+setL.map{
+    println(setL.map{
       word =>
-        word.map {event => event.name}.mkString("")
-    }.mkString(",")+"}")
+        word.map {event => event.name}.mkString("{", " ", "}" )
+    }.mkString("{", ", ", "}"))
     println()
 
     // Ke vsem lokacim se pokusime zkonstruovat vstup do vsech ostatnich
     val setT = new TransitionCoverageCreator(setL, events).create()
     println("Transition cover set:")
-    println("{"+setT.map{
+    println(setT.map{
       word =>
-        word.map {event => event.name}.mkString("")
-    }.mkString(",")+"}")
-    println()
+        word.map {event => event.name}.mkString("{", " ", "}" )
+    }.mkString("{", ", ", "}"))
 
 
     var pairToWord: Map[(State, State), List[Event]] = Map.empty
