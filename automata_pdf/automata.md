@@ -413,3 +413,9 @@ s96 -> (e08 e08): o54,o54
   <img src="smalldb-b56a5bd0b40e84dd66c9a9564203738c.png" />
   <span class="label">obrázek 2 - zadaný graf stavů článku v redakčním systému</span>
 </div>
+
+
+<div class="page-break"></div>
+
+## Použitý algoritmus
+Pro řešení úlohy jsme v jazyce Scala implementovali algoritmus z přednášky (chapter-3.ppt) s využitím k-ekvivalencí. Zdrojové kódy jsou příloženy ke zprávě.
