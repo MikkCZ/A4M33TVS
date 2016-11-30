@@ -23,8 +23,8 @@ object Application {
     println("State cover set:")
     println(setL.map{
       word =>
-        word.map {event => event.name}.mkString("{", " ", "}" )
-    }.mkString("{", ", ", "}"))
+        word.map {event => event.name}.mkString("(", " ", ")" )
+    }.toList.sorted.mkString("{", ", ", "}"))
     println()
 
     // Ke vsem lokacim se pokusime zkonstruovat vstup do vsech ostatnich
@@ -32,8 +32,8 @@ object Application {
     println("Transition cover set:")
     println(setT.map{
       word =>
-        word.map {event => event.name}.mkString("{", " ", "}" )
-    }.mkString("{", ", ", "}"))
+        word.map {event => event.name}.mkString("(", " ", ")" )
+    }.toList.sorted.mkString("{", ", ", "}"))
 
 
     var pairToWord: Map[(State, State), List[Event]] = Map.empty
@@ -64,8 +64,8 @@ object Application {
     println("Characterization set:")
     println("{"+w.map{
       word =>
-        word.map {event => event.name}.mkString("")
-    }.mkString(",")+"}")
+        word.map {event => event.name}.mkString("(", " ", ")")
+    }.toList.sorted.mkString(", ")+"}")
     pairToWord.keySet.map{
       pair =>
         s"(${pair._1.name},${pair._2.name}): ${pairToWord(pair).map{ ev => ev.name}.mkString("")}"
