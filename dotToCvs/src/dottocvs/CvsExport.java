@@ -63,8 +63,8 @@ public class CvsExport {
     
     private void exportHeader() {
         StringBuilder sb = new StringBuilder();
-        sb.append(String.format("%20s, %s\n", "entry state", entryNode().getId()));
-        sb.append(String.format("%20s, %s\n", "exit state", entryNode().getId()));
+        sb.append(String.format("%20s, %s\n", "entry state", entryNode().getName()));
+        sb.append(String.format("%20s, %s\n", "exit state", entryNode().getName()));
         sb.append(String.format("%20s, %s\n\n", "default output", "noop"));
         sb.append(String.format("%20s, %s\n", "", "next state, ,,, output"));
         sb.append(String.format("%20s", "current state"));

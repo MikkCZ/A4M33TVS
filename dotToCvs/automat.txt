@@ -1,5 +1,5 @@
-         entry state, s_draft_9694
-          exit state, s_draft_9694
+         entry state, Draft
+          exit state, Draft
       default output, noop
 
                     , next state, ,,, output
