@@ -13,30 +13,30 @@ class EquivalenceFinder(automata: Automata, events: Array[Event]) {
 
     val initialTable = initialStates.map { state => ( //pro kazdy state vygeneruj radku vystupu a prechodu
       state,
-      state.transitions(events(0)).output,
-      state.transitions(events(1)).output,
-      state.transitions(events(2)).output,
-      state.transitions(events(0)).target,
-      state.transitions(events(1)).target,
-      state.transitions(events(2)).target)
+      (for (event <- events) yield state.transitions(event).output).toList,
+      (for (event <- events) yield state.transitions(event).target).toList)
     }
 
     val croppedNodes = initialTable.map { //Nebudou existovat cykly v objektech a ja nebudu muset debuggovat StackOverflow errory
       row =>
         (State(row._1.name),
           row._2,
-          row._3,
-          row._4,
-          State(row._5.name),
-          State(row._6.name),
-          State(row._7.name))
+          for(target <- row._3) yield State(target.name))
     }
 
-    val grouped = croppedNodes.groupBy { row => (row._2, row._3, row._4) } // seskup je podle stejnych vystupu
+    val tableP0 = croppedNodes.map{node =>
+      val state = node._1
+      Row(
+        Group(0),
+        state,
+        for(n <- node._3) yield StateWithGroup(state, Group(n.name.hashCode)))
+    }
+
+    val grouped = croppedNodes.groupBy { row => row._2 } // seskup je podle stejnych vystupu
 
     val numberedGroups = grouped
       .values
-      .map { group => group.map { row => (row._1, (row._5, row._6, row._7)) } } //orezej vystupy
+      .map { group => group.map { row => (row._1, row._3) } } //orezej vystupy
       .toList.zipWithIndex
       .map { group => (group._1, Group(group._2)) } //Ocisluj skupiny
 
@@ -44,11 +44,8 @@ class EquivalenceFinder(automata: Automata, events: Array[Event]) {
 
     for (group <- numberedGroups; states <- group._1) {
       //napln mapovani
-      stateGroup += (states._2._1 -> group._2)
-      stateGroup += (states._2._2 -> group._2)
-      stateGroup += (states._2._3 -> group._2)
+      stateGroup += (states._1 -> group._2)
     }
-
 
     val tableP1 = numberedGroups.flatMap {
       //Tabulka P1 slide 32 chapter-3.ppt
@@ -59,12 +56,10 @@ class EquivalenceFinder(automata: Automata, events: Array[Event]) {
             Row(
               group._2,
               g._1,
-              StateWithGroup(targets._1, stateGroup(targets._1)),
-              StateWithGroup(targets._2, stateGroup(targets._2)),
-              StateWithGroup(targets._3, stateGroup(targets._3)))
+              for(target <- targets) yield StateWithGroup(target, stateGroup(target)))
         }
     }
-    constructTables(Table(tableP1), List.empty)
+    constructTables(Table(tableP1), List(Table(tableP0)))
 
   }
 
@@ -88,7 +83,7 @@ class EquivalenceFinder(automata: Automata, events: Array[Event]) {
 
     for (grouped <- rowsForGroup; //Pfff ???!!!
          rows = grouped._2;
-         subscriptGroup <- rows.groupBy(row => (row.next1.group, row.next2.group, row.next3.group));
+         subscriptGroup <- rows.groupBy(row => row.next.map{_.group});
          groupNumber = nextGroupNumber();
          subscriptRow <- subscriptGroup._2) {
 
@@ -97,14 +92,41 @@ class EquivalenceFinder(automata: Automata, events: Array[Event]) {
 
     Table(table.rows.map {
       row =>
+        val targets = row.next
         Row(
           newNaming(row.state),
           row.state,
-          StateWithGroup(row.next1.node, newNaming(row.next1.node)),
-          StateWithGroup(row.next2.node, newNaming(row.next2.node)),
-          StateWithGroup(row.next3.node, newNaming(row.next3.node))
+          for(target <- targets) yield StateWithGroup(target.node, newNaming(target.node))
         )
     }.sortBy(row => row.group.id))
+  }
+
+  def findDistinctEvent(events: Array[Event], tables: List[Table], tuple: (State, State)): (Event,(State, State)) = {
+    var i = 0
+    for (table <- tables) {
+      val qarow = table.rows.find(row => row.state == tuple._1).get
+      val qbrow = table.rows.find(row => row.state == tuple._2).get
+      if (qarow.group == qbrow.group) {
+        i = i+1
+      }
+    }
+    val preDifferent = tables(i-1)
+    val qarow = preDifferent.rows.find(row => row.state == tuple._1).get
+    val qbrow = preDifferent.rows.find(row => row.state == tuple._2).get
+    val event = eventForRow(qarow, qbrow, events)
+    (event._1, (event._2, event._3))
+  }
+
+  def eventForRow(qarow: Row, qbrow: Row, events: Array[Event]): (Event, State, State) = {
+    val pairs = (qarow.next zip qbrow.next).zipWithIndex
+    val diff = pairs.find{
+      p =>
+        val left = p._1._1
+        val right = p._1._2
+        left.group != right.group
+
+    }.get
+    (events(diff._2), diff._1._1.node, diff._1._2.node)
   }
 
   if (events.length != 3) {
@@ -113,12 +135,12 @@ class EquivalenceFinder(automata: Automata, events: Array[Event]) {
 
 }
 
-case class State(name: String)
-
 case class Group(id: Int)
 
-case class StateWithGroup(node: State, group: Group)
+case class Row(group: Group, state: State, next: List[StateWithGroup])
 
-case class Row(group: Group, state: State, next1: StateWithGroup, next2: StateWithGroup, next3: StateWithGroup)
+case class State(name: String)
+
+case class StateWithGroup(node: State, group: Group)
 
 case class Table(rows: List[Row])

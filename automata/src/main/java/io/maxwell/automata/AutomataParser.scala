@@ -7,8 +7,6 @@ import scala.io.Source
   */
 class AutomataParser(inputFile: String) {
   val headerPattern = """.*,(.*)""".r
-  val tableHeader = """currentstate,(.*?),(.*?),(.*?),.*""".r
-  val nodePattern = """(.*?),(.*?),(.*?),(.*?),,(.*?),(.*?),(.*?)""".r
   val lines = Source.fromFile(inputFile)
     .getLines()
     .map(line => line.filter(c => !c.isWhitespace))
@@ -18,18 +16,30 @@ class AutomataParser(inputFile: String) {
   val defaultLine = lines(2)
   val tableHeaderLine = lines(5)
   val nodeLines = lines.drop(6)
-  val events = tableHeaderLine match {
-    case tableHeader(e1, e2, e3) => (Event(e1), Event(e2), Event(e3))
-  }
+  val events = tableHeaderLine
+    .split(",")
+    .drop(1)
+    .takeWhile(!_.isEmpty)
+    .map(Event.apply)
+    .toList
+
+
   var nodeMap: Map[String, Node] = Map.empty
   var eventMap: Map[String, Event] = Map.empty
   var outputMap: Map[String, Output] = Map.empty
-  nodeLines.foreach {
-    case nodePattern(name, s1, s2, s3, o1, o2, o3) =>
-      val sourceNode = getOrCreateNode(name)
-      sourceNode.addTransition(events._1, Transition(events._1, getOrCreateOutput(o1), getOrCreateNode(s1)))
-      sourceNode.addTransition(events._2, Transition(events._2, getOrCreateOutput(o2), getOrCreateNode(s2)))
-      sourceNode.addTransition(events._3, Transition(events._3, getOrCreateOutput(o3), getOrCreateNode(s3)))
+  nodeLines.foreach { line =>
+    val parts = line.split(",")
+    val sourceNode = getOrCreateNode(parts(0))
+    val targets = parts.slice(1, events.size + 1)
+    val outputs = parts.slice(2 + events.size, 2 + 2 * events.size)
+    for (eventWithIndex <- events.zipWithIndex) {
+      sourceNode.addTransition(
+        eventWithIndex._1,
+        Transition(
+          eventWithIndex._1,
+          getOrCreateOutput(outputs(eventWithIndex._2)),
+          getOrCreateNode(targets(eventWithIndex._2))))
+    }
   }
 
   val entryNode = getOrCreateNode(entryLine match {
@@ -67,7 +77,7 @@ class AutomataParser(inputFile: String) {
   }
 
   def getEvents = {
-    Array(events._1, events._2, events._3)
+    events.toArray
   }
 
 }

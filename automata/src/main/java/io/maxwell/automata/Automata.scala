@@ -19,3 +19,17 @@ class Automata(val entryNode: Node, val exitNode: Node, val defaultOutput: Outpu
     step(entryNode, input, List.empty)
   }
 }
+
+case class Node(name: String, var transitions: Map[Event, Transition]) {
+  def addTransition(event: Event, transition: Transition): Unit = {
+    transitions = transitions + (event -> transition)
+  }
+
+  override def toString: String = name
+}
+
+case class Event(name: String)
+
+case class Output(name: String)
+
+case class Transition(event: Event, output: Output, target: Node)
