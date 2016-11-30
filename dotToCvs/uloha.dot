@@ -1,0 +1,34 @@
+#
+# State machine visualization
+#
+# Use "dot -Tpng this-file.dot -o this-file.png" to compile.
+#
+digraph structs {
+	rankdir = TB;
+	margin = 0;
+	bgcolor = transparent;
+	edge [ arrowtail=none, arrowhead=normal, arrowsize=0.6, fontsize=8, fontname="sans" ];
+	node [ shape=box, style="rounded,filled", fontsize=9, fontname="sans", fillcolor="#eeeeee" ];
+	graph [ fontsize=9, fontname="sans bold" ];
+
+	BEGIN [label = "",shape = circle,color = black,fillcolor = black,penwidth = 0,width = 0.25,style = filled];
+	node [ shape=ellipse, fontsize=9, style="filled", fontname="sans", fillcolor="#eeeeee", penwidth=2 ];
+	s_draft_9694 [ label="Draft", fillcolor="#EEEEEE" ];
+	s_published_6017 [ label="Published", fillcolor="#99FF33" ];
+	s_rejected_5c05 [ label="Rejected", fillcolor="#FF6633" ];
+	s_submitted_edda [ label="Submitted", fillcolor="#EEEEEE" ];
+	s_waiting_8dae [ label="Waiting", fillcolor="#EEEEEE" ];
+	s_submitted_edda -> s_waiting_8dae [ label=" Accept  ", color="#000000", fontcolor="#000000" ];
+	s_submitted_edda -> s_published_6017 [ label=" Accept  ", color="#000000", fontcolor="#000000" ];
+	BEGIN -> s_draft_9694 [ label=" Create  ", color="#000000", fontcolor="#000000" ];
+	s_submitted_edda -> s_submitted_edda [ label=" Edit  ", color="#000000", fontcolor="#000000" ];
+	s_draft_9694 -> s_draft_9694 [ label=" Edit  ", color="#000000", fontcolor="#000000" ];
+	s_published_6017 -> s_submitted_edda [ label=" Hide  ", color="#000000", fontcolor="#000000" ];
+	s_waiting_8dae -> s_submitted_edda [ label=" Hide  ", color="#000000", fontcolor="#000000" ];
+	s_waiting_8dae -> s_published_6017 [ label=" Publish  ", color="#000000", fontcolor="#000000" ];
+	s_submitted_edda -> s_rejected_5c05 [ label=" Reject  ", color="#000000", fontcolor="#000000" ];
+	s_submitted_edda -> s_draft_9694 [ label=" Return  ", color="#000000", fontcolor="#000000" ];
+	s_draft_9694 -> s_submitted_edda [ label=" Submit  ", color="#000000", fontcolor="#000000" ];
+	s_submitted_edda -> s_draft_9694 [ label=" Withdraw  ", color="#000000", fontcolor="#000000" ];
+
+}
