@@ -406,3 +406,10 @@ s96 -> (e08 e08): o54,o54
 </pre>
 
 <div class="page-break"></div>
+
+## Úloha Články redakčního systému
+
+<div class="labeled-img">
+  <img src="smalldb-b56a5bd0b40e84dd66c9a9564203738c.png" />
+  <span class="label">obrázek 2 - zadaný graf stavů článku v redakčním systému</span>
+</div>
