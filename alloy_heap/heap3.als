@@ -82,10 +82,10 @@ fact Next {
 //}
 
 //existuje nanejvys jeden node, ktery ma jenom leveho potomka
-//assert jedinacek { 
-//	lone n: Node | one n.l => no n.r
-//}
 // Tohle vypada hodne dobre
+assert jedinacek { 
+	lone n: Node | one n.l => no n.r
+}
 
 
 //Jeho nalezeny protipriklad nechapu. Proste to v nem nevidim
