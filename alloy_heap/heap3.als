@@ -68,29 +68,19 @@ fact Next {
 	all n : Node | n.nn = NO/next[n]
 }
 
-
-//nekdy vygeneroval to, ze obe node left i right se rovnaly
-//fact KazdeDiteJine {
-//	all n: Node | one n.r => n.l != n.r
-//}
-// Take jsem zrovna pridal
-
-//Dokazete nekdo napsat toto?
-//Pro kazdy uzel n plati, ze neexistuje node ve vyssim patre, ktery ma nizsi value nez n.p.v a zaroven mu chybi left nebo right
-//fact PlneniZleva {
-//	all n: Node | all upper: Node | (upper.level +1) = n.level 
-//}
-
 //existuje nanejvys jeden node, ktery ma jenom leveho potomka
 // Tohle vypada hodne dobre
 assert jedinacek { 
 	lone n: Node | one n.l && no n.r
 }
-assert oneRoot { one d: Node | no d.p}
-assert PotomekMensiNezRodic { no n : Node | one n.p && n.v > n.p.v }
+assert oneRoot {
+	one d: Node | no d.p
+}
+assert PotomekMensiNezRodic {
+	 no n : Node | one n.p && n.v > n.p.v 
+}
 
 
-//Jeho nalezeny protipriklad nechapu. Proste to v nem nevidim
 check jedinacek for 12 Node, 5 Level,8 Int
 check oneRoot for 12 Node, 5 Level,8 Int
 check PotomekMensiNezRodic for 12 Node, 5 Level,4 Int
