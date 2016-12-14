@@ -2,14 +2,13 @@ module Heap
 open util/ordering[Level] as LO
 open util/ordering[Node] as NO
 
-// Signatura uzlu, obsahuje svou hloubku (level), rodice (p), potomky (l,r), hodnotu (v) a uzel nasledujici v poradi (nn).
+// Signatura uzlu, obsahuje svou hloubku (level), rodice (p), potomky (l,r) a hodnotu (v).
 sig Node {
 	level: one Level,
 	p: lone Node,
 	l: lone Node,
 	r: lone Node,
-	v: one Int,
-	nn: lone Node
+	v: one Int
 }
 
 // Signatura hloubky uzlu.
@@ -88,11 +87,6 @@ fact VlastnostMaxHepy {
 	all n : Node | one n.p => n.p.v >= n.v
 }
 
-// V kazdem uzlu odpovida nn nasledujicimu uzlu v poradi.
-fact Next {
-	all n : Node | n.nn = NO/next[n]
-}
-
 // Assert: Existuje nanejvys jeden uzel, ktery ma jenom leveho potomka a nema praveho.
 pred jedinacek[] {
 	lone n: Node | one n.l && no n.r
@@ -102,13 +96,14 @@ pred oneRoot[] {
 	one d: Node | no d.p
 }
 // Assert: Neexistuje zadny uzel, jehoz hodnota by byla vyssi nez hodnota v jeho rodici, pokud jej ma.
-pred[] PotomekMensiNezRodic {
+pred PotomekMensiNezRodic[] {
 	 no n : Node | one n.p && n.v > n.p.v
 }
 
 check {jedinacek and oneRoot and PotomekMensiNezRodic} for 12 Node, 5 Level,8 Int
-check oneRoot for 12 Node, 5 Level,8 Int
-check PotomekMensiNezRodic for 12 Node, 5 Level,4 Int
+//check {jedinacek} for 12 Node, 5 Level,8 Int
+//check {oneRoot} for 12 Node, 5 Level,8 Int
+//check {PotomekMensiNezRodic} for 12 Node, 5 Level,4 Int
 
 //run {} for exactly 6 Node, 4 Level, 5 Int
 //run {} for exactly 4 Node, 3 Level, 5 Int
