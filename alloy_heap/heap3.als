@@ -94,19 +94,19 @@ fact Next {
 }
 
 // Assert: Existuje nanejvys jeden uzel, ktery ma jenom leveho potomka a nema praveho.
-assert jedinacek {
+pred jedinacek[] {
 	lone n: Node | one n.l && no n.r
 }
 // Assert: Existuje jenom jeden uzel, ktery nema rodice.
-assert oneRoot {
+pred oneRoot[] {
 	one d: Node | no d.p
 }
 // Assert: Neexistuje zadny uzel, jehoz hodnota by byla vyssi nez hodnota v jeho rodici, pokud jej ma.
-assert PotomekMensiNezRodic {
+pred[] PotomekMensiNezRodic {
 	 no n : Node | one n.p && n.v > n.p.v
 }
 
-check jedinacek for 12 Node, 5 Level,8 Int
+check {jedinacek and oneRoot and PotomekMensiNezRodic} for 12 Node, 5 Level,8 Int
 check oneRoot for 12 Node, 5 Level,8 Int
 check PotomekMensiNezRodic for 12 Node, 5 Level,4 Int
 
