@@ -2,7 +2,6 @@ module Heap
 open util/ordering[Level] as LO
 open util/ordering[Node] as NO
 
-
 sig Node {
 	level: one Level,
 	p: lone Node,
@@ -70,4 +69,27 @@ fact Next {
 }
 
 
+//nekdy vygeneroval to, ze obe node left i right se rovnaly
+//fact KazdeDiteJine {
+//	all n: Node | one n.r => n.l != n.r
+//}
+// Take jsem zrovna pridal
+
+//Dokazete nekdo napsat toto?
+//Pro kazdy uzel n plati, ze neexistuje node ve vyssim patre, ktery ma nizsi value nez n.p.v a zaroven mu chybi left nebo right
+//fact PlneniZleva {
+//	all n: Node | all upper: Node | (upper.level +1) = n.level 
+//}
+
+//existuje nanejvys jeden node, ktery ma jenom leveho potomka
+//assert jedinacek { 
+//	lone n: Node | one n.l => no n.r
+//}
+// Tohle vypada hodne dobre
+
+
+//Jeho nalezeny protipriklad nechapu. Proste to v nem nevidim
+check jedinacek for 8 Node, 5 Level,8 Int
+
+//run {} for exactly 6 Node, 4 Level, 5 Int
 run {} for exactly 9 Node, 4 Level, 5 Int
