@@ -84,12 +84,14 @@ fact Next {
 //existuje nanejvys jeden node, ktery ma jenom leveho potomka
 // Tohle vypada hodne dobre
 assert jedinacek { 
-	lone n: Node | one n.l => no n.r
+	lone n: Node | one n.l && no n.r
 }
+assert oneRoot { one d: Node | no d.p}
 
 
 //Jeho nalezeny protipriklad nechapu. Proste to v nem nevidim
 check jedinacek for 8 Node, 5 Level,8 Int
+check oneRoot for 8 Node, 5 Level,8 Int
 
 //run {} for exactly 6 Node, 4 Level, 5 Int
-run {} for exactly 9 Node, 4 Level, 5 Int
+//run {} for exactly 4 Node, 3 Level, 5 Int
