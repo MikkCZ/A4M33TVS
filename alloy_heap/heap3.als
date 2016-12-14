@@ -8,7 +8,8 @@ sig Node {
 	p: lone Node,
 	l: lone Node,
 	r: lone Node,
-	v: one Int
+	v: one Int,
+	nn: lone Node
 }
 
 sig Level {}
@@ -26,6 +27,7 @@ fact RodicMaMensiLevel {
 fact DiteJeVRodici {
 	all n : Node | one n.l => n.l.p = n
 	all n : Node | one n.r => n.r.p = n
+	all n : Node | one n.r && one n.l => n.r != n.l
 }
 
 fact NejprveLeve {
@@ -46,6 +48,11 @@ fact PlnyPredchoziLevel {
 	all n : Node | all m : Node | one n.l && n.level = LO/next[m.level] => #(m.r + m.l) = 2
 }
 
+fact PlniSeZLeva {
+	all n : Node | one n.l && one n.r => n.l.next = n.r
+	all n : Node | one NO/prev[n] && one n.l => NO/prev[n].r.next = n.l
+}
+
 fact JineHodnoty {
 	all n : Node | all m : Node | n != m => n.v != m.v
 }
@@ -58,5 +65,9 @@ fact VlastnostMaxHepy {
 	all n : Node | one n.p => n.p.v >= n.v
 }
 
+fact Next {
+	all n : Node | n.nn = NO/next[n]
+}
 
-run {} for exactly 6 Node, 4 Level, 5 Int
+
+run {} for exactly 9 Node, 4 Level, 5 Int
