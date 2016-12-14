@@ -87,11 +87,13 @@ assert jedinacek {
 	lone n: Node | one n.l && no n.r
 }
 assert oneRoot { one d: Node | no d.p}
+assert PotomekMensiNezRodic { no n : Node | one n.p && n.v > n.p.v }
 
 
 //Jeho nalezeny protipriklad nechapu. Proste to v nem nevidim
-check jedinacek for 8 Node, 5 Level,8 Int
-check oneRoot for 8 Node, 5 Level,8 Int
+check jedinacek for 12 Node, 5 Level,8 Int
+check oneRoot for 12 Node, 5 Level,8 Int
+check PotomekMensiNezRodic for 12 Node, 5 Level,4 Int
 
 //run {} for exactly 6 Node, 4 Level, 5 Int
 //run {} for exactly 4 Node, 3 Level, 5 Int
