@@ -106,11 +106,41 @@ clanek muze byt ve stavu DRAFT
 E<> clanek.DRAFT
 
 /*
+clanek muze cekat az do nastaveneho wait time
+*/
+E<> clanek.WAITING and clanek.clk == publish_wait_time
+
+/*
+clanek muze cekat az do maximalniho wait time
+*/
+E<> clanek.WAITING and clanek.clk == nakladatelstvi.MAX_WAIT
+
+/*
+clanek nikdy nebude cekat dele nez je maximalni wait time
+*/
+E<> clanek.WAITING and !(clanek.clk > nakladatelstvi.MAX_WAIT)
+
+/*
 pokud je clanek ve stavu WAITING, pak je nastaveny i cas cekani
 */
 A[] clanek.WAITING imply publish_wait_time>0
 
 /*
-pokud clanek neni ve stavu WAITING, pak je nastaveny cas cekani na 0
+do stavu PUBLISHED se lze dostat bez cekani
 */
-A[] !clanek.WAITING imply publish_wait_time==0
+E<> clanek.PUBLISHED imply publish_wait_time==0
+
+/*
+do stavu PUBLISHED se lze dostat po nejakem cekani
+*/
+E<> clanek.PUBLISHED and publish_wait_time>0
+
+/*
+pokud se clanek dostane do stavu PUBLISHED z WAITING, doba cekani jiz ubehla
+*/
+A[] (clanek.PUBLISHED and publish_wait_time>0) imply (clanek.clk>=publish_wait_time)
+
+/*
+pokud clanek neni ve stavu WAITING ani PUBLISHED, pak je nastaveny cas cekani na 0
+*/
+A[] !(clanek.WAITING or clanek.PUBLISHED) imply publish_wait_time==0
