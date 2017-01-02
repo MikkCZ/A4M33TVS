@@ -3,4 +3,9 @@
 /*
 
 */
-//NO_QUERY
+A[] not deadlock
+
+/*
+
+*/
+E<> deadlock
