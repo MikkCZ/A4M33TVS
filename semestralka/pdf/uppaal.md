@@ -241,3 +241,19 @@ K ověřování tvrzení jsme využili Verifier, který je dostupný v UPPAALU.
 		Pokud článek není ani v čekání a ani publikovaný, pak je doba čekání článku nulová.
 	</li>
 </ul>
+
+<div class="page-break"></div>
+
+## Zajímavé pozorování
+Konfliktním stavem je u nás stav `SUBMITTED` ve kterém článek náleží jak autorovi, tak vydavateli a
+oba na něm smějí provádět úpravy.
+
+V nefinální implementaci, před testováním pomocí verifier nám vznikl stav,
+kdy článek byl zamítnut vydavatelem, ale autor se na něm snažil provádět úpravy.
+Tento stav jsme napravili hranou `reject?` v automatu autora.
+
+Ve stavu `SUBMITTED` je potřeba zanést veškeré hrany, jelikož se jedná o konfliktní stav,
+ve kterém jsou ovlivňovány všechny automaty a všechny se mohou nějak rozhodnout.
+
+Diagram neodpovídá chování v reálném světě, jelikož při "nekonečně" dlouhé době trvání
+se všechny články přesunou, dříve nebo později, do stavu zamítnutého článku `REJECTED`.
